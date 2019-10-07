@@ -1,4 +1,4 @@
-package by.europrotocol.model
+package by.europrotocol.data.model
 
 open class DriverInfo (
     open val fistName: String,

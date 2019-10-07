@@ -1,13 +1,16 @@
-package by.europrotocol.model
+package by.europrotocol.data.model
 
 class EuroProtocolModel (
-
+    // Дата инцидента
+    val dateAccident: DateAccident,
+    // место дтп
+    val placeAccident: PlaceAccident,
     // Лица получившие телесные повреждения
-    val isInjuredPersons: Boolean,
+    val isInjuredPersons: Boolean = false,
     // прочине транспортные средства
-    val isotherVehicles: Boolean,
+    val isotherVehicles: Boolean = false,
     // инные объекты кроме транспортных средств
-    val isOtherObject: Boolean,
+    val isOtherObject: Boolean = false,
     val roadAccidentParticipantOne: RoadAccidentParticipant,
     val roadAccidentParticipantTwo: RoadAccidentParticipant
 ) {
@@ -32,6 +35,10 @@ class EuroProtocolModel (
         val driverInfo: DriverInfo,
         val autoInfo: AutoInfo,
         val accidentCircumstances: AccidentCircumstances,
-        val myNotes: String
+        // Мои примечания
+        val myNotes: String = "",
+        // утверждаю, что являюсь ответственным за причинение вреда
+        val iClaimToBeResponsibleForTheHarm: Boolean = false,
+        val placeOfInitialStrike: Set<PlaceOfImpact> = setOf()
     )
 }

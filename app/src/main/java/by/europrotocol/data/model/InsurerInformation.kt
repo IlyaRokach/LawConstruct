@@ -1,4 +1,4 @@
-package by.europrotocol.model
+package by.europrotocol.data.model
 
 open class InsurerInformation (
     open val nameCompany: String,
