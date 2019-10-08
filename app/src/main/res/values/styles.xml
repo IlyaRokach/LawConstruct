@@ -15,8 +15,10 @@
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>
-    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar"/>
-    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light"/>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
     <style name="BaseTextStyle">
         <item name="android:textSize">14sp</item>
@@ -32,5 +34,22 @@
         <item name="android:textColor">@android:color/white</item>
         <item name="android:textSize">18sp</item>
         <item name="android:background">@color/baseColor</item>
+    </style>
+
+    <style name="BaseMarginButtonStyle">
+        <item name="android:layout_marginBottom">@dimen/default_margin_16</item>
+        <item name="android:layout_marginEnd">@dimen/default_margin_80</item>
+        <item name="android:layout_marginStart">@dimen/default_margin_80</item>
+    </style>
+
+    <style name="NextButtonStyle" parent="BaseMarginButtonStyle">
+        <item name="android:layout_height">40dp</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:background">@color/baseColor</item>
+    </style>
+
+    <style name="OrangeTextView" parent="BaseTextStyle">
+        <item name="android:textColor">@color/orange</item>
     </style>
 </resources>
