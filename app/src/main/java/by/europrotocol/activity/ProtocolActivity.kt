@@ -2,26 +2,41 @@ package by.europrotocol.activity
 
 import android.Manifest
 import android.content.pm.PackageManager
-import android.graphics.*
+import android.graphics.Bitmap
+import android.graphics.BitmapFactory
 import android.graphics.drawable.BitmapDrawable
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Environment
+import android.view.View
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import by.europrotocol.R
+import by.europrotocol.data.model.EuroProtocolModel
+import by.europrotocol.data.repository.RepositoryEuroProtocolConvertPdf
+import by.europrotocol.data.repository.StubRepository
+import by.europrotocol.drawing.ProtocolDrawer
 import com.itextpdf.text.Document
 import com.itextpdf.text.Image
 import com.itextpdf.text.pdf.PdfWriter
 import kotlinx.android.synthetic.main.activity_protocol.*
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import java.io.File
 import java.io.FileOutputStream
 import java.io.IOException
 
 class ProtocolActivity : AppCompatActivity() {
-
+    val width = 849
+    val height = 1200
     val PATH = Environment.getExternalStorageDirectory().path
     val DOCUMENT = "$PATH/protocol.pdf"
     val IMAGE = "$PATH/protocol.jpg"
+    val repository: RepositoryEuroProtocolConvertPdf = StubRepository()
+    val protocol: EuroProtocolModel = repository.getPdfModel()
+
+    var state: State = State.SIGNATURE_1
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,23 +44,46 @@ class ProtocolActivity : AppCompatActivity() {
         if (!isPermissionGranted()) {
             ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.WRITE_EXTERNAL_STORAGE), 100)
         }
-        btn_pdf.setOnClickListener {
+        initViews()
+        renderState()
+    }
+
+    private fun initViews() {
+        dw_signature_1.setStrokeWidth(12f)
+        dw_signature_2.setStrokeWidth(12f)
+        dw_scheme.setStrokeWidth(12f)
+        btn_scheme_ok.setOnClickListener {
             if (isPermissionGranted()) {
-                draw()
-                createPdf()
+                GlobalScope.launch {
+                    draw()
+                    createPdf()
+                    showImage()
+                }
             }
+        }
+
+        btn_signature_1.setOnClickListener { dw_signature_1.clearCanvas() }
+        btn_signature_2.setOnClickListener { dw_signature_2.clearCanvas() }
+        btn_scheme.setOnClickListener { dw_scheme.clearCanvas() }
+        btn_signature_1_ok.setOnClickListener {
+            state = State.SIGNATURE_2
+            renderState()
+        }
+        btn_signature_2_ok.setOnClickListener {
+            state = State.SCHEME
+            renderState()
         }
     }
 
-    private fun draw() {
-        val bitmap = BitmapFactory.decodeResource(resources, R.drawable.protocol).copy(Bitmap.Config.ARGB_8888, true)
-        val canvas = Canvas(bitmap)
-        canvas.drawBitmap(bitmap, 0f, 0f, null)
-        canvas.drawText("EuroProtocol", 100f, 200f, Paint().apply {
-            color = Color.BLACK
-            textSize = 100f
-        })
-        iv_protocol.setImageDrawable(BitmapDrawable(resources, bitmap))
+    private suspend fun draw() = withContext(Dispatchers.IO) {
+        var bitmap = BitmapFactory.decodeResource(resources, R.drawable.protocol).copy(Bitmap.Config.ARGB_8888, true)
+        bitmap = scaleDown(bitmap)
+        protocol.scheme = dw_scheme.getBitmap()
+        protocol.roadAccidentParticipantOne.signature = dw_signature_1.getBitmap()
+        protocol.roadAccidentParticipantTwo.signature = dw_signature_2.getBitmap()
+        val drawer = ProtocolDrawer(bitmap, protocol)
+        bitmap = drawer.drawProtocol()
+        show(bitmap)
         try {
             val out = FileOutputStream(File(IMAGE))
             bitmap.compress(Bitmap.CompressFormat.PNG, 100, out)
@@ -54,7 +92,7 @@ class ProtocolActivity : AppCompatActivity() {
         }
     }
 
-    private fun createPdf() {
+    private suspend fun createPdf() = withContext(Dispatchers.IO) {
         val document = Document()
         PdfWriter.getInstance(document, FileOutputStream(File(DOCUMENT)))
         document.open()
@@ -68,5 +106,45 @@ class ProtocolActivity : AppCompatActivity() {
 
     private fun isPermissionGranted(): Boolean {
         return checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED
+    }
+
+    private fun scaleDown(image: Bitmap): Bitmap {
+        return Bitmap.createScaledBitmap(image, width, height, true)
+    }
+
+    private suspend fun show(bitmap: Bitmap) = withContext(Dispatchers.Main) {
+        iv_protocol.setImageDrawable(BitmapDrawable(resources, bitmap))
+    }
+
+    private suspend fun showImage() = withContext(Dispatchers.Main) {
+        state = State.PROTOCOL
+        renderState()
+    }
+
+    private fun renderState() {
+        when(state) {
+            State.SIGNATURE_1 -> {
+                ll_signature_1.visibility = View.VISIBLE
+            }
+            State.SIGNATURE_2 -> {
+                ll_signature_1.visibility = View.GONE
+                ll_signature_2.visibility = View.VISIBLE
+            }
+            State.SCHEME -> {
+                ll_signature_2.visibility = View.GONE
+                ll_scheme.visibility = View.VISIBLE
+            }
+            State.PROTOCOL -> {
+                ll_scheme.visibility = View.GONE
+                iv_protocol.visibility = View.VISIBLE
+            }
+        }
+    }
+
+    enum class State {
+        SIGNATURE_1,
+        SIGNATURE_2,
+        SCHEME,
+        PROTOCOL
     }
 }
