@@ -22,7 +22,7 @@ class LoginActivity : AppCompatActivity() {
 
     private fun initClickListeners() {
         btn_sign_in.setOnClickListener {
-            startActivity(Intent(this, ProtocolActivity::class.java))
+            startActivity(Intent(this, MainActivity::class.java))
         }
         btn_sign_up.setOnClickListener {
 //            startActivity(Intent(this, RegistrationActivity::class.java))
