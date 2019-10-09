@@ -22,11 +22,11 @@ open abstract class BaseRegistrationFragment<T: IPresenter>: Fragment, IView {
 
     abstract fun onInflateViewFragment(): Int
 
-    abstract fun onCreateFragment(instance: Bundle?)
+    fun onCreateFragment(instance: Bundle?) {}
 
     abstract fun onCreateViewFragment(view: View): View
 
-    abstract fun onAttachFragment(activity: Context)
+    fun onAttachFragment(activity: Context){}
 
     abstract fun onNextClick()
 

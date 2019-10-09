@@ -4,8 +4,8 @@ import by.europrotocol.fragment.base.IView
 
 interface IPrivateInfoDriverView: IView {
 
-    fun showFirstNameReqiredError()
-    fun showNameReqiredError()
+    fun showFirstNameRequiredError(errorMessage: String)
+    fun showNameRequiredError(errorMessage: String)
 
     fun approveNext(isApprove: Boolean)
 }
