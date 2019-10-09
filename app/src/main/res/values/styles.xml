@@ -59,4 +59,8 @@
     <style name="OrangeTextView" parent="BaseTextStyle">
         <item name="android:textColor">@color/orange</item>
     </style>
+
+    <style name="GreyTextView" parent="BaseTextStyle">
+        <item name="android:textColor">@color/grey</item>
+    </style>
 </resources>
