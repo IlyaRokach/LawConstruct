@@ -5,12 +5,13 @@ import android.view.View
 import android.widget.EditText
 import android.widget.Toast
 import butterknife.BindView
+import butterknife.OnClick
 import by.europrotocol.R
 import by.europrotocol.activity.registration.RegistrationStep
 import by.europrotocol.fragment.base.BaseRegistrationFragment
 import by.europrotocol.utils.CustomTextWatcher
 
-class PrivateInfoDriverFragment : BaseRegistrationFragment<IPrivateInfoDriverPresenter>(), IPrivateInfoDriverView {
+class PrivateInfoDriverFragment: BaseRegistrationFragment<IPrivateInfoDriverPresenter>(), IPrivateInfoDriverView {
 
     @BindView(R.id.et_first_name)
     protected lateinit var etFirstName: EditText
@@ -68,6 +69,7 @@ class PrivateInfoDriverFragment : BaseRegistrationFragment<IPrivateInfoDriverPre
         presenter = PrivateInfoDriverPresenter(this)
     }
 
+    @OnClick(R.id.next_button)
     override fun onNextClick() {
         getController().onNextRequest()
     }

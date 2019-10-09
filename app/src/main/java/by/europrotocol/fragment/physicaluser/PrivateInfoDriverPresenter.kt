@@ -8,7 +8,8 @@ import io.reactivex.Completable
 import io.reactivex.Single
 import io.reactivex.functions.Consumer
 
-class PrivateInfoDriverPresenter(view: IPrivateInfoDriverView): BaseRegistrationPresenter<IPrivateInfoDriverView>(view), IPrivateInfoDriverPresenter {
+class PrivateInfoDriverPresenter(
+    view: IPrivateInfoDriverView): BaseRegistrationPresenter<IPrivateInfoDriverView>(view), IPrivateInfoDriverPresenter {
 
     protected val privateInfoDriverModel: PrivateInfoDriverModel = PrivateInfoDriverModel()
 

@@ -4,6 +4,7 @@ import android.text.Editable
 import android.view.View
 import android.widget.*
 import butterknife.BindView
+import butterknife.OnClick
 import by.europrotocol.R
 import by.europrotocol.activity.registration.RegistrationStep
 import by.europrotocol.fragment.base.BaseRegistrationFragment
@@ -105,6 +106,7 @@ class AutoInfoFragment: BaseRegistrationFragment<IAutoInfoPresenter>(),
         presenter = AutoInfoDriverPresenter(this)
     }
 
+    @OnClick(R.id.next_button)
     override fun onNextClick() {
         getController().onNextRequest()
     }

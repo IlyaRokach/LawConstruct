@@ -48,18 +48,25 @@ class AutoInfoDriverPresenter(view: IAutoInfoDriverView): BaseRegistrationPresen
     }
 
     override fun onNextRequest() {
+
+        var isApprove = true
+
         if (autoInfoModel.carModel.isEmpty()){
             getView()!!.showCarModelRequiredError(getView()!!.getActivity()!!.getString(R.string.error_required_field))
-            return
+            isApprove = false
         }
         if (autoInfoModel.registrationNumber.isEmpty()) {
             getView()!!.showRegistrationNumberRequiredError(getView()!!.getActivity()!!.getString(R.string.error_required_field))
-            return
+            isApprove = false
         }
 
         if (autoInfoModel.countryRegistration.isEmpty()) {
             getView()!!.showCountryRegistrationRequiredError(getView()!!.getActivity()!!.getString(R.string.error_required_field))
-            return
+            isApprove = false
+        }
+
+        if (!isApprove) {
+            getView()!!.approveNext(isApprove)
         }
 
         var trailerInfo: TrailerInfo? = null
