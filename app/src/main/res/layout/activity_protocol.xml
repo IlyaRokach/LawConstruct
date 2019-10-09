@@ -5,21 +5,101 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".activity.ProtocolActivity">
+        tools:context=".activity.ProtocolActivity"
+        android:background="@color/baseColor">
+
 
     <ImageView
             android:id="@+id/iv_protocol"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:layout_height="0dp"
+            android:visibility="gone"
+            app:layout_constraintTop_toTopOf="parent"/>
+    <LinearLayout
+            android:id="@+id/ll_signature_1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            android:visibility="gone"
+            android:orientation="vertical">
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Подпись водителя 1"/>
+        <com.divyanshu.draw.widget.DrawView
+                android:id="@+id/dw_signature_1"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:background="@color/color_white"/>
+        <Button
+                android:id="@+id/btn_signature_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Очистить"/>
+        <Button
+                android:id="@+id/btn_signature_1_ok"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Далее"/>
 
-    <Button
-            android:id="@+id/btn_pdf"
-            android:layout_width="0dp"
-            android:layout_height="40dp"
-            android:text="Convert to pdf"
-            app:layout_constraintBottom_toBottomOf="@+id/iv_protocol"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            />
+    </LinearLayout>
+
+    <LinearLayout
+            android:id="@+id/ll_signature_2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            android:visibility="gone"
+            android:orientation="vertical">
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Подпись водителя 2"/>
+        <com.divyanshu.draw.widget.DrawView
+                android:id="@+id/dw_signature_2"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:background="@color/color_white"/>
+        <Button
+                android:id="@+id/btn_signature_2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Очистить"/>
+
+        <Button
+                android:id="@+id/btn_signature_2_ok"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Далее"/>
+    </LinearLayout>
+
+    <LinearLayout
+            android:id="@+id/ll_scheme"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            android:visibility="gone"
+            android:orientation="vertical">
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Схема ДТП"/>
+        <com.divyanshu.draw.widget.DrawView
+                android:id="@+id/dw_scheme"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:background="@color/color_white"/>
+        <Button
+                android:id="@+id/btn_scheme"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Очистить"/>
+
+        <Button
+                android:id="@+id/btn_scheme_ok"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Далее"/>
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
