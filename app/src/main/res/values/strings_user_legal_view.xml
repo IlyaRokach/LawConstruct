@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="hint_first_name">*Фамилия</string>
-    <string name="hint_last_name">*Имя</string>
-    <string name="hint_patronymic_name">Отчество</string>
-    <string name="download_scan">Загрузить скан</string>
+    <string name="legal_view_hint_unp_fim">*УНП</string>
+    <string name="legal_view_hint_place_stay">*Место регистрации /пребываия</string>
+    <string name="legal_view_name_firm">Название организации</string>
+    <string name="legal_view_hint_info_text">Или загрузите скан своего "бумажки"</string>
+    <string name="legal_view_download_scan">Загрузить скан</string>
 
 </resources>

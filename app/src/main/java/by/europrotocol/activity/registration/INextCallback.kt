@@ -1,5 +1,5 @@
 package by.europrotocol.activity.registration
 
 interface INextCallback {
-    fun onNext()
+    fun onNext(currentStep: RegistrationStep)
 }

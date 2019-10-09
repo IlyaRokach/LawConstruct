@@ -2,55 +2,51 @@ package by.europrotocol.fragment.physicaluser
 
 import android.content.Context
 import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
-
+import android.widget.Toast
 import by.europrotocol.R
-import by.europrotocol.activity.registration.INextCallback
+import by.europrotocol.activity.registration.RegistrationStep
+import by.europrotocol.fragment.base.BaseRegistrationFragment
+import kotlinx.android.synthetic.main.fragment_private_driver_info_user.*
 
-class PrivateInfoDriverFragment : Fragment() {
+class PrivateInfoDriverFragment : BaseRegistrationFragment<IPrivateInfoDriverPresenter>(), IPrivateInfoDriverView {
 
-    private var nextCallback: INextCallback? = null
+    override fun onInflateViewFragment(): Int = R.layout.fragment_private_driver_info_user
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
+    override fun onCreateFragment(instance: Bundle?) {
 
-        }
     }
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.fragment_private_driver_info_user, container, false)
+    override fun onCreateViewFragment(view: View): View {
+        initPresenter()
+        return view
+    }
+    
+    fun initPresenter(){
+        presenter = PrivateInfoDriverPresenter(this)
     }
 
+    override fun onAttachFragment(activity: Context) {
 
-    override fun onAttach(context: Context) {
-        super.onAttach(context)
-        if (context is INextCallback) {
-            nextCallback = context
+    }
+
+    override fun onNextClick() {
+
+    }
+
+    override fun showFirstNameReqiredError() {
+
+    }
+
+    override fun showNameReqiredError() {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    }
+
+    override fun approveNext(isApprove: Boolean) {
+        if (isApprove) {
+            nextCallback?.onNext(RegistrationStep.STEP_PERSONAL_DRIVER_INFO)
         } else {
-            throw RuntimeException(context.toString() + " must implement OnFragmentInteractionListener")
+            Toast.makeText(activity, "Есть незаполненные обязательные поля!!", Toast.LENGTH_SHORT).show()
         }
-    }
-
-    override fun onDetach() {
-        super.onDetach()
-        nextCallback = null
-    }
-
-    companion object {
-
-        @JvmStatic
-        fun newInstance() =
-            PrivateInfoDriverFragment().apply {
-                arguments = Bundle().apply {
-
-                }
-            }
     }
 }

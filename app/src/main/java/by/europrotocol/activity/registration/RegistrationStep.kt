@@ -1,0 +1,13 @@
+package by.europrotocol.activity.registration
+
+enum class RegistrationStep {
+    STEP_FIRMA_INFO,
+    STEP_PERSONAL_DRIVER_INFO,
+    STEP_VEHICLE_DATA,
+    STEP_INSURER_INFO,
+    STEP_DRIVER_INFO,
+    STEP_PERSONAL_DATA,
+    STEP_AUTO_INFO,
+    STEP_CIRCUMSTANCES_OF_AN_ACCIDENT,
+    STEP_PLACE_OF_IMPACT
+}

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="persona_driver_info_hint_first_name">*Фамилия</string>
+    <string name="persona_driver_info_hint_last_name">*Имя</string>
+    <string name="persona_driver_info_hint_patronymic_name">Отчество</string>
+    <string name="persona_driver_info_hint_info_text">Или загрузите скан своего водительского удостоверения</string>
+    <string name="persona_driver_info_download_scan">Загрузить скан</string>
+
+</resources>
