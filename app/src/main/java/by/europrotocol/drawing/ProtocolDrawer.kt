@@ -7,7 +7,7 @@ import by.europrotocol.data.model.drawing.CoordinatesProvider
 class ProtocolDrawer(val image: Bitmap,val protocol: EuroProtocolModel) {
     private val drawer: Drawer = Drawer(image)
     private val provider1 = CoordinatesProvider(1, hit = protocol.roadAccidentParticipantOne.placeOfInitialStrike.first())
-    private val provider2 = CoordinatesProvider(2, hit = protocol.roadAccidentParticipantOne.placeOfInitialStrike.first())
+    private val provider2 = CoordinatesProvider(2, hit = protocol.roadAccidentParticipantTwo.placeOfInitialStrike.first())
 
 
     fun drawProtocol():Bitmap {
@@ -159,7 +159,6 @@ class ProtocolDrawer(val image: Bitmap,val protocol: EuroProtocolModel) {
             count++
         }
         drawer.drawText(provider.count, count.toString())
-
         drawer.drawCross(provider.hitPlace)
     }
 

@@ -8,6 +8,7 @@ import android.graphics.drawable.BitmapDrawable
 import android.os.Bundle
 import android.os.Environment
 import android.view.View
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import by.europrotocol.R
@@ -73,6 +74,10 @@ class ProtocolActivity : AppCompatActivity() {
             state = State.SCHEME
             renderState()
         }
+
+        btn_pdf.setOnClickListener {
+            Toast.makeText(this, "Готово", Toast.LENGTH_SHORT).show()
+        }
     }
 
     private suspend fun draw() = withContext(Dispatchers.IO) {
@@ -125,18 +130,23 @@ class ProtocolActivity : AppCompatActivity() {
         when(state) {
             State.SIGNATURE_1 -> {
                 ll_signature_1.visibility = View.VISIBLE
+                supportActionBar?.title = "Подпись водителя 1"
             }
             State.SIGNATURE_2 -> {
                 ll_signature_1.visibility = View.GONE
                 ll_signature_2.visibility = View.VISIBLE
+                supportActionBar?.title = "Подпись водителя 2"
             }
             State.SCHEME -> {
                 ll_signature_2.visibility = View.GONE
                 ll_scheme.visibility = View.VISIBLE
+                supportActionBar?.title = "Схема ДТП"
             }
             State.PROTOCOL -> {
                 ll_scheme.visibility = View.GONE
                 iv_protocol.visibility = View.VISIBLE
+                btn_pdf.visibility = View.VISIBLE
+                supportActionBar?.title = "Экспорт в PDF"
             }
         }
     }

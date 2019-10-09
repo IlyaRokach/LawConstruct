@@ -116,6 +116,6 @@ class CoordinatesProvider(
         }
     }
 
-    val signature = if(type == 1) Point(320f, 1065f) else Point(678f, 1065f)
-    val responsibleSignature = if(type == 1) Point(182f, 1121f) else Point(694f,1121f)
+    val signature = if(type == 1) Point(320f, 1045f) else Point(435f, 1045f)
+    val responsibleSignature = if(type == 1) Point(182f, 1100f) else Point(694f,1100f)
 }
