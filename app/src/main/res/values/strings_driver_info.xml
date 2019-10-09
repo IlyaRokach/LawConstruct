@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="driver_info_hint_first_name">* Фамилия</string>
+    <string name="driver_info_hint_last_name">* Имя</string>
+    <string name="driver_info_hint_patronymic_name">* Отчество</string>
+
+    <string name="driver_info_date_birthday">* Дата рождения</string>
+    <string name="driver_info_residence_address">* Место жительства/пребывания</string>
+    <string name="driver_info_zip_code">Почтовый индекс</string>
+    <string name="driver_info_country">* Страна</string>
+
+    <string name="driver_info_title_text_check_box">Я являюсь одновременно и страхователем и водителем</string>
+
+    <string name="driver_info_number_license">* Номер водительского удостоверения</string>
+    <string name="driver_info_series_license">* Серия водительского удостоверения</string>
+    <string name="driver_info_valid_finish_date">* Срок действия водител. удостоверения</string>
+    <string name="driver_info_category_license">* Категория управления ТС</string>
+</resources>
