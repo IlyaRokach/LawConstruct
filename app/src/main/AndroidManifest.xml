@@ -21,7 +21,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".activity.ProtocolActivity" />
-        <activity android:name=".activity.RegistrationActivity" />
+        <activity android:name=".activity.RegistrationActivity"
+                android:theme="@style/NoActionBarTheme"/>
         <activity android:name=".activity.LoginActivity">
         </activity>
         <activity android:name=".activity.MainActivity" />
