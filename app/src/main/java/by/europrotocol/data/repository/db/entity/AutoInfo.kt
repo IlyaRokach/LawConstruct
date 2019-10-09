@@ -6,7 +6,7 @@ import androidx.room.PrimaryKey
 
 @Entity
 class AutoInfo {
-    @PrimaryKey
+    @PrimaryKey(autoGenerate = true)
     var id: Long = 0
 
     @ColumnInfo(name = "json")

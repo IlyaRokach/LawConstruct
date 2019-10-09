@@ -15,7 +15,6 @@ class EuroProtocolApplication: Application() {
             applicationContext,
             AppDatabase::class.java, "database"
         )
-            .allowMainThreadQueries()
             .build()
     }
 }

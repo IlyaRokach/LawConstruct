@@ -43,7 +43,7 @@ public interface UserDataDao {
     List<PolicyholderInformation> getAllHolder();
 
     @Query("SELECT * FROM policyholderinformation where user_holder = :isUser")
-    List<InsurerInformation> getHolder(boolean isUser);
+    List<PolicyholderInformation> getHolder(boolean isUser);
 
     @Insert
     void insert(PolicyholderInformation car);

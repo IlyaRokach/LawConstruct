@@ -6,7 +6,7 @@ import androidx.room.PrimaryKey
 
 @Entity
 open class PolicyholderInformation {
-    @PrimaryKey
+    @PrimaryKey(autoGenerate = true)
     var id: Long = 0
 
     @ColumnInfo(name = "json")
