@@ -30,5 +30,5 @@ task clean(type: Delete) {
 ext {
     roomVersion = "1.0.0"
     rxJavaVersion = "2.2.6"
-    butterKnifeVersion = "10.2.0"
+    butterKnifeVersion = "10.0.0"
 }
