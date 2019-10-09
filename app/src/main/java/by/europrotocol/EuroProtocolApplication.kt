@@ -9,12 +9,14 @@ class EuroProtocolApplication: Application() {
 
     private lateinit var db: AppDatabase
 
+    fun getBase(): AppDatabase  = db
+
     override fun onCreate() {
         super.onCreate()
         db = Room.databaseBuilder(
             applicationContext,
-            AppDatabase::class.java, "database"
-        )
+            AppDatabase::class.java, "database")
+            .allowMainThreadQueries()
             .build()
     }
 }
