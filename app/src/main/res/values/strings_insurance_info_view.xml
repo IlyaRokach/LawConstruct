@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="insurance_info_hint_name_company">*Наименование страховщика</string>
+
+    <string name="insurance_info_certificate">Страховое свидетельство(полис, сертификат)</string>
+
+    <string name="insurance_info_hint_series">*Серия</string>
+    <string name="insurance_info_hint_number">*Номер полиса</string>
+
+    <string name="insurance_info_title_start_date">Дата начала дейтвия полиса</string>
+    <string name="insurance_info_title_finish_date">Дата окончания дейтвия полиса</string>
+
+    <string name="insurance_info_is_voluntary">Транспортное средство застраховано по договору добровольного страхования?</string>
+    <string name="insurance_info_country_actions">Страна действия страхового св-тва</string>
+</resources>
