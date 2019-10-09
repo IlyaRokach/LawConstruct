@@ -5,8 +5,7 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".activity.ProtocolActivity"
-        android:background="@color/baseColor">
+        tools:context=".activity.ProtocolActivity">
 
 
     <ImageView
@@ -15,29 +14,43 @@
             android:layout_height="0dp"
             android:visibility="gone"
             app:layout_constraintTop_toTopOf="parent"/>
+
+    <Button
+            style="@style/ButtonStyle"
+            android:background="@color/orange"
+            android:id="@+id/btn_pdf"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:text="Экспорт в PDF"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"/>
     <LinearLayout
             android:id="@+id/ll_signature_1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:layout_constraintTop_toTopOf="parent"
+            android:padding="10dp"
             android:visibility="gone"
             android:orientation="vertical">
-        <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Подпись водителя 1"/>
-        <com.divyanshu.draw.widget.DrawView
-                android:id="@+id/dw_signature_1"
-                android:layout_width="match_parent"
-                android:layout_height="300dp"
-                android:background="@color/color_white"/>
+
+            <com.divyanshu.draw.widget.DrawView
+                    android:id="@+id/dw_signature_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    android:background="@drawable/draw_background"/>
+
         <Button
+                style="@style/ButtonStyle"
                 android:id="@+id/btn_signature_1"
+                android:layout_marginTop="20dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Очистить"/>
         <Button
+                style="@style/ButtonStyle"
                 android:id="@+id/btn_signature_1_ok"
+                android:layout_marginTop="20dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Далее"/>
@@ -50,24 +63,26 @@
             android:layout_height="wrap_content"
             app:layout_constraintTop_toTopOf="parent"
             android:visibility="gone"
+            android:padding="10dp"
             android:orientation="vertical">
-        <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Подпись водителя 2"/>
+
         <com.divyanshu.draw.widget.DrawView
                 android:id="@+id/dw_signature_2"
                 android:layout_width="match_parent"
                 android:layout_height="300dp"
-                android:background="@color/color_white"/>
+                android:background="@drawable/draw_background"/>
         <Button
+                style="@style/ButtonStyle"
                 android:id="@+id/btn_signature_2"
+                android:layout_marginTop="20dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Очистить"/>
 
         <Button
+                style="@style/ButtonStyle"
                 android:id="@+id/btn_signature_2_ok"
+                android:layout_marginTop="20dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Далее"/>
@@ -79,24 +94,26 @@
             android:layout_height="wrap_content"
             app:layout_constraintTop_toTopOf="parent"
             android:visibility="gone"
+            android:padding="10dp"
             android:orientation="vertical">
-        <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Схема ДТП"/>
+
         <com.divyanshu.draw.widget.DrawView
                 android:id="@+id/dw_scheme"
                 android:layout_width="match_parent"
                 android:layout_height="300dp"
-                android:background="@color/color_white"/>
+                android:background="@drawable/draw_background"/>
         <Button
+                style="@style/ButtonStyle"
                 android:id="@+id/btn_scheme"
+                android:layout_marginTop="20dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Очистить"/>
 
         <Button
+                style="@style/ButtonStyle"
                 android:id="@+id/btn_scheme_ok"
+                android:layout_marginTop="20dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Далее"/>

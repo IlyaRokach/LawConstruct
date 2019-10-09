@@ -38,12 +38,14 @@ class Drawer(
     }
 
     private fun setTransparentBackground(bitmap: Bitmap) {
+        val color = Color.parseColor("#01579B")
         for (x in 0 until bitmap.width) {
             for (y in 0 until bitmap.height) {
-                if (bitmap.getPixel(x,y) == Color.WHITE) {
+                if (bitmap.getPixel(x,y) == color || bitmap.getPixel(x,y) == Color.WHITE) {
                     bitmap.setPixel(x,y, Color.TRANSPARENT)
                 }
             }
         }
+
     }
 }
