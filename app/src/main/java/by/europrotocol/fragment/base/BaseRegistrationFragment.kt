@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import butterknife.ButterKnife
+import by.europrotocol.EuroProtocolApplication
 import by.europrotocol.activity.registration.INextCallback
 
 
@@ -49,6 +50,8 @@ open abstract class BaseRegistrationFragment<T: IPresenter>: Fragment, IView {
             }
         }
     }
+
+    override fun getApplication(): EuroProtocolApplication = this.activity!!.application as EuroProtocolApplication
 
     override fun onCreateView(
         inflater: LayoutInflater,
