@@ -45,11 +45,11 @@ class PrivateInfoDriverPresenter(view: IPrivateInfoDriverView): BaseRegistration
                 var gson: Gson = Gson()
                 gson.toJson(it)
             }.map {
+                val drover = by.europrotocol.data.repository.db.entity.DriverInfo()
+                drover.json = it
+                drover.isUser = true
                 getView()!!.getApplication().getBase().userDao.insert(
-                    by.europrotocol.data.repository.db.entity.DriverInfo(
-                        json = it,
-                        isUser = true
-                    )
+                    drover
                 )
                 return@map true
             }.subscribe(Consumer {

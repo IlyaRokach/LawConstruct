@@ -17,7 +17,7 @@ import by.europrotocol.data.repository.db.entity.UserInfo;
         DriverInfo.class,
         PolicyholderInformation.class,
         UserInfo.class
-}, version = 1)
+}, version = 1, exportSchema = false)
 public abstract class AppDatabase extends RoomDatabase {
     public abstract UserDataDao getUserDao();
 }

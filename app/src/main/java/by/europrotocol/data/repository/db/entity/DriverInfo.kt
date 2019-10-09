@@ -5,13 +5,13 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 
 @Entity
-open class DriverInfo (
+open class DriverInfo {
     @PrimaryKey(autoGenerate = true)
-    var id: Long = 0,
+    var id: Long = 0
 
     @ColumnInfo(name = "json")
-    var json: String = "{}",
+    var json: String = "{}"
 
     @ColumnInfo(name = "user")
     var isUser: Boolean = false
-)
+}
