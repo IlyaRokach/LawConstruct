@@ -39,6 +39,14 @@ class AutoInfoDriverPresenter(view: IAutoInfoDriverView): BaseRegistrationPresen
         }
     }
 
+    override fun onChangeChecedAvailableTrailer(isAvailable: Boolean) {
+        if (isAvailable) {
+            getView()!!.showTrailerInfo()
+        } else {
+            getView()!!.showTrailerInfo()
+        }
+    }
+
     override fun onNextRequest() {
         if (autoInfoModel.carModel.isEmpty()){
             getView()!!.showCarModelRequiredError(getView()!!.getActivity()!!.getString(R.string.error_required_field))
