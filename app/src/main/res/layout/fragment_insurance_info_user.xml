@@ -43,6 +43,7 @@
             android:layout_marginEnd="@dimen/default_margin_48"
             android:layout_marginTop="@dimen/default_margin_12"
 
+            android:maxLength="2"
             android:hint="@string/insurance_info_hint_series"
             android:inputType="text"
             app:layout_constraintTop_toBottomOf="@id/et_certificate"
@@ -58,6 +59,7 @@
             android:layout_marginEnd="@dimen/default_margin_48"
             android:layout_marginTop="@dimen/default_margin_12"
 
+            android:maxLength="7"
             android:hint="@string/insurance_info_hint_number"
             android:inputType="text"
             app:layout_constraintTop_toBottomOf="@id/et_series"
@@ -90,6 +92,7 @@
             android:layout_marginEnd="@dimen/default_margin_48"
             android:layout_marginTop="@dimen/default_margin_12"
 
+            android:maxLength="10"
             android:hint="@string/insurance_info_title_start_date"
 
             android:inputType="date"
@@ -108,7 +111,7 @@
             android:layout_marginStart="@dimen/default_margin_48"
             android:layout_marginEnd="@dimen/default_margin_48"
             android:layout_marginTop="@dimen/default_margin_12"
-
+            android:maxLength="10"
             android:hint="@string/insurance_info_title_finish_date"
 
             android:inputType="date"

@@ -16,4 +16,6 @@ interface IInsurerInformationView: IView {
     fun getTypeDriver(): TypeDriver
 
     fun approveNext(isApprove: Boolean)
+
+    fun setValue(model: InsurerInformationModel)
 }

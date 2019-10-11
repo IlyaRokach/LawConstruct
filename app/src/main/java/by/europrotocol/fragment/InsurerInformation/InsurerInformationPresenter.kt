@@ -1,5 +1,6 @@
 package by.europrotocol.fragment.InsurerInformation
 
+import by.europrotocol.BuildConfig
 import by.europrotocol.R
 import by.europrotocol.data.model.InsurerInformation
 import by.europrotocol.fragment.base.BaseRegistrationPresenter
@@ -13,6 +14,35 @@ class InsurerInformationPresenter(
 ): BaseRegistrationPresenter<IInsurerInformationView>(view), IInsurerInformationPresenter {
 
     protected val infoModel: InsurerInformationModel = InsurerInformationModel()
+
+    override fun onCreateView() {
+        super.onCreateView()
+        if (BuildConfig.DEBUG) {
+            when (getView()!!.getTypeDriver().type){
+                TypeDriver.ONE -> {
+                    infoModel.country = "РБ"
+                    infoModel.nameCompany = "Белгосстрах"
+                    infoModel.startDate = "20.10.2018"
+                    infoModel.finishDate = "20.10.2020"
+                    infoModel.isvoluntary = true
+                    infoModel.number = "1234567"
+                    infoModel.certificate = "полис"
+                    infoModel.series = "AB"
+                }
+                TypeDriver.TWO -> {
+                    infoModel.country = "РБ"
+                    infoModel.nameCompany = "БелНафтанСтрах"
+                    infoModel.startDate = "20.12.2019"
+                    infoModel.finishDate = "20.12.2021"
+                    infoModel.isvoluntary = true
+                    infoModel.number = "7654321"
+                    infoModel.certificate = "полис"
+                    infoModel.series = "AС"
+                }
+            }
+            getView()!!.setValue(infoModel)
+        }
+    }
 
     override fun onChangeNameCompany(changedText: String) {
         infoModel.nameCompany = changedText

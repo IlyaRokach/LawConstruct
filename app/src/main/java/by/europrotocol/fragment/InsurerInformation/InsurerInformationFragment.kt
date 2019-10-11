@@ -200,4 +200,15 @@ class InsurerInformationFragment: BaseRegistrationFragment<IInsurerInformationPr
     }
 
     override fun getTypeDriver(): TypeDriver = arguments!!.get(TypeDriver.NAME_ARG) as TypeDriver
+
+    override fun setValue(model: InsurerInformationModel) {
+        nameCompany.setText(model.nameCompany)
+        certificate.setText(model.certificate)
+        series.setText(model.series)
+        number.setText(model.number)
+        country.setText(model.country)
+        startDate.setText(model.startDate)
+        finishDate.setText(model.finishDate)
+        isvoluntary.isChecked = model.isvoluntary
+    }
 }
