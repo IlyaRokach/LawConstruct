@@ -56,7 +56,7 @@ class CoordinatesProvider(
     val driverAddress = if (type == 1) Point(26f, 709f) else Point(531f, 709f)
     val driverBirthDay = if (type == 1) Point(100f, 688f) else Point(604f, 688f)
     val driverCountry = if (type == 1) Point(178f, 719f) else Point(614f, 719f)
-    val driverPhoneOrEmail = if (type == 1) Point(100f, 730f) else Point(606f, 730f)
+    val driverPhoneOrEmail = if (type == 1) Point(100f, 732f) else Point(606f, 732f)
     val driverSeries = if (type == 1) Point(85f, 752f) else Point(590f, 752f)
     val driverNumber = if (type == 1) Point(141f, 752f) else Point(647f, 752f)
     val driverCategory = if (type == 1) Point(121f, 763f) else Point(626f, 763f)
@@ -96,6 +96,7 @@ class CoordinatesProvider(
     val notes = if(type == 1) Point(26f, 1068f) else Point(532f, 1068f)
     val signature = if(type == 1) Point(320f, 1045f) else Point(435f, 1045f)
     val responsibleSignature = if(type == 1) Point(182f, 1100f) else Point(694f,1100f)
+    val responsibleName = if(type == 1) Point(29f, 1139f) else Point(535f, 1139f)
 
     init {
         hit.forEach {
