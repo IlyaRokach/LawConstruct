@@ -1,5 +1,6 @@
 package by.europrotocol.fragment.InsurerInformation
 
+import android.os.Bundle
 import android.text.Editable
 import android.view.View
 import android.widget.CompoundButton
@@ -11,9 +12,20 @@ import butterknife.OnClick
 import by.europrotocol.R
 import by.europrotocol.activity.registration.RegistrationStep
 import by.europrotocol.fragment.base.BaseRegistrationFragment
+import by.europrotocol.fragment.physicaluser.PrivateInfoDriverFragment
 import by.europrotocol.utils.CustomTextWatcher
 
 class InsurerInformationFragment: BaseRegistrationFragment<IInsurerInformationPresenter>(), IInsurerInformationView {
+
+    companion object {
+        @JvmStatic
+        fun newInstance() =
+            InsurerInformationFragment().apply {
+                arguments = Bundle().apply {
+
+                }
+            }
+    }
 
     @BindView(R.id.et_name_company)
     protected lateinit var nameCompany: EditText

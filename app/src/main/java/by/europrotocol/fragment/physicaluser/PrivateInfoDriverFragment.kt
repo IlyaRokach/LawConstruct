@@ -1,5 +1,6 @@
 package by.europrotocol.fragment.physicaluser
 
+import android.os.Bundle
 import android.text.Editable
 import android.view.View
 import android.widget.EditText
@@ -9,9 +10,20 @@ import butterknife.OnClick
 import by.europrotocol.R
 import by.europrotocol.activity.registration.RegistrationStep
 import by.europrotocol.fragment.base.BaseRegistrationFragment
+import by.europrotocol.fragment.placeofimpact.PlaceOfImpactFragment
 import by.europrotocol.utils.CustomTextWatcher
 
 class PrivateInfoDriverFragment: BaseRegistrationFragment<IPrivateInfoDriverPresenter>(), IPrivateInfoDriverView {
+
+    companion object {
+        @JvmStatic
+        fun newInstance() =
+            PrivateInfoDriverFragment().apply {
+                arguments = Bundle().apply {
+
+                }
+            }
+    }
 
     @BindView(R.id.et_first_name)
     protected lateinit var etFirstName: EditText
@@ -21,7 +33,6 @@ class PrivateInfoDriverFragment: BaseRegistrationFragment<IPrivateInfoDriverPres
 
     @BindView(R.id.et_patronymic_name)
     protected lateinit var etPatronymicName: EditText
-
 
     override fun onInflateViewFragment(): Int = R.layout.fragment_private_driver_info_user
 

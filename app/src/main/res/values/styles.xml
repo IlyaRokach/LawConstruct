@@ -77,4 +77,10 @@
         <item name="colorControlNormal">@android:color/holo_green_dark</item>
         <item name="colorControlActivated">@android:color/holo_orange_dark</item>
     </style>
+
+    <style name="MyCheckBox" parent="Theme.AppCompat.Light">
+        <item name="android:layout_marginTop">@dimen/default_margin_16</item>
+        <item name="colorControlNormal">@color/baseColor</item>
+        <item name="colorControlActivated">@android:color/holo_orange_dark</item>
+    </style>
 </resources>

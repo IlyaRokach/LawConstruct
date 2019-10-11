@@ -11,7 +11,7 @@ enum class PlaceOfImpact {
     FRONT_RIGHT_WING,
     // Заднее правое крыло
     BACK_RIGHT_WING,
-    // Переднее левое крыло
+    // Заднее левое крыло
     BACK_LEFT_WING,
     // левая дверь
     LEFT_DOOR,

@@ -1,17 +1,31 @@
 package by.europrotocol.fragment.questionoftheaccident
 
+import android.os.Bundle
 import android.view.View
 import android.widget.RadioGroup
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
+import butterknife.OnClick
 import by.europrotocol.R
 import by.europrotocol.activity.registration.RegistrationStep
+import by.europrotocol.fragment.InsurerInformation.InsurerInformationPresenter
+import by.europrotocol.fragment.RegNewLegalEntityUserFragment
 import by.europrotocol.fragment.base.BaseRegistrationFragment
 import by.europrotocol.utils.IntentUtils
 
 class QuestionOfTheAccidentFragment: BaseRegistrationFragment<IQuestionOfTheAccidentPresenter>(), IQuestionOfTheAccidentView{
 
     private var ad: AlertDialog.Builder? = null
+
+    companion object {
+        @JvmStatic
+        fun newInstance() =
+            QuestionOfTheAccidentFragment().apply {
+                arguments = Bundle().apply {
+
+                }
+            }
+    }
 
     private val listenerGroup1: RadioGroup.OnCheckedChangeListener =
         RadioGroup.OnCheckedChangeListener { group, checkedId ->
@@ -118,11 +132,17 @@ class QuestionOfTheAccidentFragment: BaseRegistrationFragment<IQuestionOfTheAcci
         view.findViewById<RadioGroup>(R.id.circumstances_of_the_accident_item_8)
             .setOnCheckedChangeListener(listenerGroup8)
 
+        initPresenter()
+
         return view
     }
-
+    @OnClick(R.id.next_button)
     override fun onNextClick() {
         getController().onNextRequest()
+    }
+
+    private fun initPresenter(){
+        presenter = QuestionOfTheAccidentPresenter(this)
     }
 
     override fun approveNext(isApprove: Boolean) {

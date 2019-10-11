@@ -1,5 +1,6 @@
 package by.europrotocol.fragment.driverinfo
 
+import android.os.Bundle
 import android.text.Editable
 import android.view.View
 import android.widget.EditText
@@ -8,11 +9,22 @@ import butterknife.BindView
 import butterknife.OnClick
 import by.europrotocol.R
 import by.europrotocol.activity.registration.RegistrationStep
+import by.europrotocol.fragment.InsurerInformation.InsurerInformationFragment
 import by.europrotocol.fragment.base.BaseRegistrationFragment
 import by.europrotocol.fragment.physicaluser.PrivateInfoDriverPresenter
 import by.europrotocol.utils.CustomTextWatcher
 
 class DriverInfoFragment: BaseRegistrationFragment<IDriverInfoPresenter>(), IDriverInfoView{
+
+    companion object {
+        @JvmStatic
+        fun newInstance() =
+            DriverInfoFragment().apply {
+                arguments = Bundle().apply {
+
+                }
+            }
+    }
 
     @BindView(R.id.et_first_name)
     protected lateinit var etFirstName: EditText

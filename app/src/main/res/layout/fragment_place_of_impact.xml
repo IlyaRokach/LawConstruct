@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <LinearLayout
+            style="@style/LinearLayoutStyleRadioButtonGroup"
+            android:orientation="vertical"
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/default_margin_12">
+
+        <TextView
+                android:id="@+id/title_driver"
+
+                style="@style/GreyTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="text"/>
+
+        <!--передний бамбер-->
+        <CheckBox
+                style="@style/MyCheckBox"
+                android:id="@+id/cb_place_of_impact_front_bumper"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/place_of_impact_front_bumper" />
+        <!--задний бампер-->
+        <CheckBox
+                style="@style/MyCheckBox"
+                android:id="@+id/cb_place_of_impact_back_bumper"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/place_of_impact_back_bumper" />
+        <!--Переднее левое крыло-->
+        <CheckBox
+                style="@style/MyCheckBox"
+                android:id="@+id/cb_place_of_impact_front_left_wing"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/place_of_impact_front_left_wing" />
+        <!--Переднее правое крыло-->
+        <CheckBox
+                style="@style/MyCheckBox"
+                android:id="@+id/cb_place_of_impact_back_left_wing"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/place_of_impact_back_left_wing" />
+        <!--Заднее правое крыло-->
+        <CheckBox
+                style="@style/MyCheckBox"
+                android:id="@+id/cb_place_of_impact_front_right_wing"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/place_of_impact_front_right_wing" />
+        <!--Заднее левое крыло-->
+        <CheckBox
+                style="@style/MyCheckBox"
+                android:id="@+id/cb_place_of_impact_back_right_wing"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/place_of_impact_back_right_wing" />
+        <!--Левая дверь-->
+        <CheckBox
+                style="@style/MyCheckBox"
+                android:id="@+id/cb_place_of_impact_left_door"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/place_of_impact_left_door" />
+        <!--Правая дверь-->
+        <CheckBox
+                style="@style/MyCheckBox"
+                android:id="@+id/cb_place_of_impact_right_door"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/place_of_impact_right_door" />
+
+
+        <Button
+                android:id="@+id/next_button"
+                style="@style/NextButtonStyle"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/place_of_impact_title_next_button"
+
+                android:layout_marginTop="@dimen/default_margin_12" />
+
+    </LinearLayout>
+</ScrollView>
