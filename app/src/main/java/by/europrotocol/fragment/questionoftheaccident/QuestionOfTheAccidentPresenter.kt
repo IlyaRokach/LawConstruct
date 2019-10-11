@@ -69,14 +69,14 @@ class QuestionOfTheAccidentPresenter(
     override fun onNextRequest() {
         var result = true
 
-        result = (questionOfTheAccidentModel.item1 ?: false) and result
-        result = (questionOfTheAccidentModel.item2 ?: false) and result
-        result = (questionOfTheAccidentModel.item3 ?: false) and result
-        result = (questionOfTheAccidentModel.item4 ?: false) and result
-        result = (questionOfTheAccidentModel.item5 ?: false) and result
-        result = (questionOfTheAccidentModel.item6 ?: false) and result
-        result = (questionOfTheAccidentModel.item7 ?: false) and result
-        result = (questionOfTheAccidentModel.item8 ?: false) and result
+        result = !(questionOfTheAccidentModel.item1 ?: false) and result
+        result = !(questionOfTheAccidentModel.item2 ?: false) and result
+        result = !(questionOfTheAccidentModel.item3 ?: false) and result
+        result = !(questionOfTheAccidentModel.item4 ?: false) and result
+        result = !(questionOfTheAccidentModel.item5 ?: false) and result
+        result = !(questionOfTheAccidentModel.item6 ?: false) and result
+        result = !(questionOfTheAccidentModel.item7 ?: false) and result
+        result = !(questionOfTheAccidentModel.item8 ?: false) and result
 
         getView()!!.approveNext(result)
     }

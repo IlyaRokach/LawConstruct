@@ -88,7 +88,7 @@ class RegistrationActivity : AppCompatActivity(), INextCallback {
         while (index < max) {
             var pair = list[index]
             if (pair.first == currentStep.step &&
-                ( ( (typeDriver != null && pair.second != null) && typeDriver.type == pair.second!!.type))) {
+                ( ( (typeDriver != null && pair.second != null) && typeDriver.type == pair.second!!.type) || typeDriver == null && pair.second == null) ) {
                 next = (index + 1)
             }
             index++

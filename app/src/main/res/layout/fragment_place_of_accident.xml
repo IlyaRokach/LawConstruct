@@ -31,7 +31,6 @@
                 android:layout_marginStart="@dimen/default_margin_16"
                 android:layout_marginEnd="@dimen/default_margin_16"
                 android:layout_marginTop="@dimen/default_margin_12"
-                android:ems="10"
                 android:inputType="date" />
 
         <TextView
@@ -52,7 +51,6 @@
                 android:layout_marginStart="@dimen/default_margin_16"
                 android:layout_marginEnd="@dimen/default_margin_16"
                 android:layout_marginTop="@dimen/default_margin_12"
-                android:ems="10"
                 android:inputType="time" />
 
         <EditText
@@ -66,8 +64,7 @@
                 android:layout_marginTop="@dimen/default_margin_12"
 
                 android:hint="@string/place_of_accident_place_address"
-                android:ems="10"
-                android:inputType="time" />
+                android:inputType="text" />
 
         <TextView
                 android:layout_width="match_parent"
@@ -85,7 +82,6 @@
                 android:layout_marginTop="@dimen/default_margin_12"
                 android:layout_marginStart="@dimen/default_margin_16"
                 android:layout_marginEnd="@dimen/default_margin_16"
-                android:ems="@dimen/default_text_size_14"
                 android:hint="@string/place_of_accident_witnesses_fio"
                 android:inputType="text"/>
 
@@ -98,7 +94,6 @@
                 android:layout_marginStart="@dimen/default_margin_16"
                 android:layout_marginEnd="@dimen/default_margin_16"
                 android:layout_marginTop="@dimen/default_margin_12"
-                android:ems="@dimen/default_text_size_14"
                 android:hint="@string/place_of_accident_witnesses_address"
                 android:inputType="text" />
 
@@ -110,7 +105,6 @@
                 android:layout_marginStart="@dimen/default_margin_16"
                 android:layout_marginEnd="@dimen/default_margin_16"
                 android:layout_marginTop="@dimen/default_margin_12"
-                android:ems="@dimen/default_text_size_14"
                 android:hint="@string/place_of_accident_witnesses_phone"
                 android:inputType="text"/>
         <Button
