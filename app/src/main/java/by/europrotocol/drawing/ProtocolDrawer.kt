@@ -82,6 +82,8 @@ class ProtocolDrawer(
             drawer.drawSignature(provider.signature, participant.signature ?: return)
             if (participant.iClaimToBeResponsibleForTheHarm) {
                 drawer.drawSignature(provider.responsibleSignature, participant.signature ?: return)
+                val responsibleName = "${participant.driverInfo.fistName} ${participant.driverInfo.name.first()}. ${participant.driverInfo.patronymic.first()}."
+                drawer.drawText(provider.responsibleName, responsibleName)
             }
         }
 
@@ -167,6 +169,7 @@ class ProtocolDrawer(
         provider.hitPlaces.forEach {
             drawer.drawCross(it)
         }
+
 
         //TODO add multiline text drawing
         //drawer.drawText(provider.notes, participant.myNotes)
