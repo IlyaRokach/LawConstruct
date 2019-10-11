@@ -1,5 +1,6 @@
 package by.europrotocol.fragment.placeofaccident
 
+import android.os.Bundle
 import android.text.Editable
 import android.view.View
 import android.widget.EditText
@@ -12,6 +13,16 @@ import by.europrotocol.fragment.base.BaseRegistrationFragment
 import by.europrotocol.utils.CustomTextWatcher
 
 class PlaceOfAccidentFragment: BaseRegistrationFragment<IPlaceOfAccidentPresenter>(), IPlaceOfAccidentView {
+
+    companion object {
+        @JvmStatic
+        fun newInstance() =
+            PlaceOfAccidentFragment().apply {
+                arguments = Bundle().apply {
+
+                }
+            }
+    }
 
     override fun onInflateViewFragment(): Int = R.layout.fragment_place_of_accident
 

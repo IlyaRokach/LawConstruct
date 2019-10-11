@@ -1,10 +1,9 @@
 package by.europrotocol.fragment.InsurerInformation
 
 import by.europrotocol.R
-import by.europrotocol.data.model.AutoInfo
 import by.europrotocol.data.model.InsurerInformation
-import by.europrotocol.data.model.TrailerInfo
 import by.europrotocol.fragment.base.BaseRegistrationPresenter
+import by.europrotocol.fragment.base.TypeDriver
 import com.google.gson.Gson
 import io.reactivex.Single
 import io.reactivex.functions.Consumer
@@ -88,34 +87,28 @@ class InsurerInformationPresenter(
             getView()!!.approveNext(isApprove)
         }
 
-        val driverInfo = InsurerInformation(
-            infoModel.nameCompany,
-            infoModel.isvoluntary,
-            infoModel.certificate,
-            infoModel.series,
-            infoModel.number,
-            infoModel.country,
-            infoModel.startDate,
-            infoModel.finishDate
-        )
+        if (isApprove) {
+            val insurerInformation = InsurerInformation(
+                infoModel.nameCompany,
+                infoModel.isvoluntary,
+                infoModel.certificate,
+                infoModel.series,
+                infoModel.number,
+                infoModel.country,
+                infoModel.startDate,
+                infoModel.finishDate
+            )
 
-        addDisposable(
-            Single.just(driverInfo)
-                .map {
-                    var gson = Gson()
-                    gson.toJson(it)
-                }.map {
-                    val drover = by.europrotocol.data.repository.db.entity.DriverInfo()
-                    drover.json = it
-                    drover.isUser = true
-                    getView()!!.getApplication().getBase().userDao.insert(
-                        drover
-                    )
-                    return@map true
-                }.subscribe(Consumer {
-                    getView()!!.approveNext(true)
-                } ))
+            when (getView()!!.getTypeDriver().type) {
+                TypeDriver.ONE -> getView()!!.getApplication().getEuroProtocolRepository().saveDriverOne(
+                    insurerInformation
+                )
+                TypeDriver.TWO -> getView()!!.getApplication().getEuroProtocolRepository().saveDriverTwo(
+                    insurerInformation
+                )
+            }
+        }
 
-        getView()!!.approveNext(false)
+        getView()!!.approveNext(isApprove)
     }
 }

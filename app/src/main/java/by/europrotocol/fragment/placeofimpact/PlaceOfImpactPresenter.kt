@@ -2,6 +2,7 @@ package by.europrotocol.fragment.placeofimpact
 
 import by.europrotocol.data.model.PlaceOfImpact
 import by.europrotocol.fragment.base.BaseRegistrationPresenter
+import by.europrotocol.fragment.base.TypeDriver
 
 class PlaceOfImpactPresenter(placeOfImpactView: IPlaceOfImpactView) : BaseRegistrationPresenter<IPlaceOfImpactView>(placeOfImpactView), IPlaceOfImpactPresenter  {
 
@@ -16,6 +17,20 @@ class PlaceOfImpactPresenter(placeOfImpactView: IPlaceOfImpactView) : BaseRegist
     }
 
     override fun onNextRequest() {
-        getView()!!.approveNext(setPlaceOfImpact.isNotEmpty())
+
+        val result = setPlaceOfImpact.isNotEmpty()
+
+        if(result) {
+            when (getView()!!.getTypeDriver().type) {
+                TypeDriver.ONE -> getView()!!.getApplication().getEuroProtocolRepository().saveDriverOne(
+                    setPlaceOfImpact
+                )
+                TypeDriver.TWO -> getView()!!.getApplication().getEuroProtocolRepository().saveDriverTwo(
+                    setPlaceOfImpact
+                )
+            }
+        }
+
+        getView()!!.approveNext(result)
     }
 }

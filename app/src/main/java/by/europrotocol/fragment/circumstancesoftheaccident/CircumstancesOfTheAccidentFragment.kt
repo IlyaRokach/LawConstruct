@@ -10,15 +10,16 @@ import butterknife.OnClick
 import by.europrotocol.R
 import by.europrotocol.activity.registration.RegistrationStep
 import by.europrotocol.fragment.base.BaseRegistrationFragment
+import by.europrotocol.fragment.base.TypeDriver
 
 class CircumstancesOfTheAccidentFragment: BaseRegistrationFragment<ICircumstancesOfTheAccidentPresenter>(), ICircumstancesOfTheAccidentView {
 
     companion object {
         @JvmStatic
-        fun newInstance() =
+        fun newInstance(type: TypeDriver) =
             CircumstancesOfTheAccidentFragment().apply {
                 arguments = Bundle().apply {
-
+                    putParcelable(TypeDriver.NAME_ARG, type)
                 }
             }
     }
@@ -129,4 +130,6 @@ class CircumstancesOfTheAccidentFragment: BaseRegistrationFragment<ICircumstance
             Toast.makeText(activity, "Минимум один пункт должен быть выбран!!", Toast.LENGTH_SHORT).show()
         }
     }
+
+    override fun getTypeDriver(): TypeDriver = arguments!!.get(TypeDriver.NAME_ARG) as TypeDriver
 }

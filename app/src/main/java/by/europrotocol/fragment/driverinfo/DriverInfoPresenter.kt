@@ -3,6 +3,7 @@ package by.europrotocol.fragment.driverinfo
 import by.europrotocol.R
 import by.europrotocol.data.model.DriverInfo
 import by.europrotocol.fragment.base.BaseRegistrationPresenter
+import by.europrotocol.fragment.base.TypeDriver
 import com.google.gson.Gson
 
 class DriverInfoPresenter(
@@ -80,6 +81,31 @@ class DriverInfoPresenter(
         if (infoModel.name.isEmpty()) {
             getView()!!.showNameRequiredError(getView()!!.getActivity()!!.getString(R.string.error_required_field))
             return
+        }
+
+        val data = DriverInfo(
+            infoModel.fistName,
+            infoModel.name,
+            infoModel.patronymic,
+            infoModel.residenceAdress,
+            infoModel.dateBirthday,
+            infoModel.country,
+            infoModel.mobilePhoneOrEmail,
+            DriverInfo.DriverLicense(
+                infoModel.driverLicense.series,
+                infoModel.driverLicense.number,
+                infoModel.driverLicense.category,
+                infoModel.driverLicense.validFinishDate
+            )
+        )
+
+        when (getView()!!.getTypeDriver().type){
+            TypeDriver.ONE -> getView()!!.getApplication().getEuroProtocolRepository().saveDriverOne(
+                data
+            )
+            TypeDriver.TWO -> getView()!!.getApplication().getEuroProtocolRepository().saveDriverTwo(
+                data
+            )
         }
 
         getView()!!.approveNext(true)

@@ -12,6 +12,7 @@ import butterknife.OnClick
 import by.europrotocol.R
 import by.europrotocol.activity.registration.RegistrationStep
 import by.europrotocol.fragment.base.BaseRegistrationFragment
+import by.europrotocol.fragment.base.TypeDriver
 import by.europrotocol.fragment.physicaluser.PrivateInfoDriverFragment
 import by.europrotocol.utils.CustomTextWatcher
 
@@ -19,10 +20,10 @@ class InsurerInformationFragment: BaseRegistrationFragment<IInsurerInformationPr
 
     companion object {
         @JvmStatic
-        fun newInstance() =
+        fun newInstance(type: TypeDriver) =
             InsurerInformationFragment().apply {
                 arguments = Bundle().apply {
-
+                    putParcelable(TypeDriver.NAME_ARG, type)
                 }
             }
     }
@@ -197,4 +198,6 @@ class InsurerInformationFragment: BaseRegistrationFragment<IInsurerInformationPr
     override fun showFinishDateError(errorMessage: String) {
         finishDate.error = errorMessage
     }
+
+    override fun getTypeDriver(): TypeDriver = arguments!!.get(TypeDriver.NAME_ARG) as TypeDriver
 }

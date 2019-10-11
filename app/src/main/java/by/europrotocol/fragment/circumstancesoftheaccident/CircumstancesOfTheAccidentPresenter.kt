@@ -1,6 +1,9 @@
 package by.europrotocol.fragment.circumstancesoftheaccident
 
+import by.europrotocol.data.model.AccidentCircumstances
+import by.europrotocol.data.model.InsurerInformation
 import by.europrotocol.fragment.base.BaseRegistrationPresenter
+import by.europrotocol.fragment.base.TypeDriver
 
 class CircumstancesOfTheAccidentPresenter(
     questionOfTheAccidentView: ICircumstancesOfTheAccidentView
@@ -112,6 +115,36 @@ class CircumstancesOfTheAccidentPresenter(
         model.stoppedOrForcedlyStoppedOrStood ||
         model.otherViolationNotSpecifiedInParagraph1to18
 
+        if (result) {
+            val data = AccidentCircumstances(
+                model.didNotComplyWithRequiredLateralIntervar,
+                        model.rebuiltAnotherLane,
+                        model.turnedRight,
+                        model.turnedLeft,
+                        model.turnedAround,
+                        model.backUp,
+                        model.droveOffRoadway,
+                        model.leftToTheIntersectionProhibitionSignal,
+                        model.droveIntoTheOncomingLane,
+                        model.violatedTheRulesOfOvertaking,
+                        model.startedMovingAfterStoppingOrParking,
+                        model.didNotComplyWithPriorityMarkRequirement,
+                        model.DepartedFromSecondaryRoadAdjacentToTheTerritory,
+                        model.movedAroundTheTerritoryInThePresenceOfAnObstacleToTheRight,
+                        model.movedAroundTheRoundabout,
+                        model.collidedWithaStandingVehicle,
+                        model.stoppedOrForcedlyStoppedOrStood,
+                        model.otherViolationNotSpecifiedInParagraph1to18
+            )
+            when (getView()!!.getTypeDriver().type){
+                TypeDriver.ONE -> getView()!!.getApplication().getEuroProtocolRepository().saveDriverOne(
+                    data
+                )
+                TypeDriver.TWO -> getView()!!.getApplication().getEuroProtocolRepository().saveDriverTwo(
+                    data
+                )
+            }
+        }
         getView()!!.approveNext(result)
     }
 }

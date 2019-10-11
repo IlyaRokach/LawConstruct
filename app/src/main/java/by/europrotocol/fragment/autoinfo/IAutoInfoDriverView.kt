@@ -1,6 +1,7 @@
 package by.europrotocol.fragment.physicaluser
 
 import by.europrotocol.fragment.base.IView
+import by.europrotocol.fragment.base.TypeDriver
 
 interface IAutoInfoDriverView: IView {
 
@@ -10,6 +11,8 @@ interface IAutoInfoDriverView: IView {
 
     fun showTrailerInfo()
     fun hideTrailerInfo()
+
+    fun getTypeDriver(): TypeDriver
 
     fun approveNext(isApprove: Boolean)
 }

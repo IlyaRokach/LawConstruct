@@ -5,6 +5,7 @@ import by.europrotocol.data.model.AutoInfo
 import by.europrotocol.data.model.DriverInfo
 import by.europrotocol.data.model.TrailerInfo
 import by.europrotocol.fragment.base.BaseRegistrationPresenter
+import by.europrotocol.fragment.base.TypeDriver
 import by.europrotocol.fragment.physicaluser.IAutoInfoDriverView
 import by.europrotocol.fragment.physicaluser.IAutoInfoPresenter
 import com.google.gson.Gson
@@ -76,28 +77,22 @@ class AutoInfoDriverPresenter(view: IAutoInfoDriverView): BaseRegistrationPresen
                 autoInfoModel.trailerInfo!!.countryRegistration)
         }
 
-        val driverInfo: AutoInfo = AutoInfo(
+        val driverInfo = AutoInfo(
             autoInfoModel.carModel,
             autoInfoModel.registrationNumber,
             autoInfoModel.countryRegistration,
             trailerInfo
         )
 
-        addDisposable(Single.just(driverInfo)
-            .map {
-                var gson = Gson()
-                gson.toJson(it)
-            }.map {
-                val drover = by.europrotocol.data.repository.db.entity.DriverInfo()
-                drover.json = it
-                drover.isUser = true
-                getView()!!.getApplication().getBase().userDao.insert(
-                    drover
-                )
-                return@map true
-            }.subscribe(Consumer {
-                getView()!!.approveNext(true)
-            } ))
+        when (getView()!!.getTypeDriver().type){
+            TypeDriver.ONE -> getView()!!.getApplication().getEuroProtocolRepository().saveDriverOne(
+                driverInfo
+            )
+            TypeDriver.TWO -> getView()!!.getApplication().getEuroProtocolRepository().saveDriverTwo(
+                driverInfo
+            )
+        }
+        getView()!!.approveNext(true)
     }
 
 }

@@ -11,6 +11,8 @@ import by.europrotocol.R
 import by.europrotocol.activity.registration.RegistrationStep
 import by.europrotocol.fragment.InsurerInformation.InsurerInformationFragment
 import by.europrotocol.fragment.base.BaseRegistrationFragment
+import by.europrotocol.fragment.base.TypeDriver
+import by.europrotocol.fragment.claimresponsibleFfortheharm.ClaimToBeResponsibleForTheHarmFragment
 import by.europrotocol.fragment.physicaluser.PrivateInfoDriverPresenter
 import by.europrotocol.utils.CustomTextWatcher
 
@@ -18,10 +20,10 @@ class DriverInfoFragment: BaseRegistrationFragment<IDriverInfoPresenter>(), IDri
 
     companion object {
         @JvmStatic
-        fun newInstance() =
+        fun newInstance(type: TypeDriver) =
             DriverInfoFragment().apply {
                 arguments = Bundle().apply {
-
+                    putParcelable(TypeDriver.NAME_ARG, type)
                 }
             }
     }
@@ -222,4 +224,6 @@ class DriverInfoFragment: BaseRegistrationFragment<IDriverInfoPresenter>(), IDri
             Toast.makeText(activity, "Есть незаполненные обязательные поля!!", Toast.LENGTH_SHORT).show()
         }
     }
+
+    override fun getTypeDriver(): TypeDriver = arguments!!.get(TypeDriver.NAME_ARG) as TypeDriver
 }

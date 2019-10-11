@@ -1,6 +1,7 @@
 package by.europrotocol.fragment.InsurerInformation
 
 import by.europrotocol.fragment.base.IView
+import by.europrotocol.fragment.base.TypeDriver
 
 interface IInsurerInformationView: IView {
 
@@ -11,6 +12,8 @@ interface IInsurerInformationView: IView {
     fun showCountryError(errorMessage: String)
     fun showStartDateError(errorMessage: String)
     fun showFinishDateError(errorMessage: String)
+
+    fun getTypeDriver(): TypeDriver
 
     fun approveNext(isApprove: Boolean)
 }
