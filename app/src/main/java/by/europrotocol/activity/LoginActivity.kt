@@ -22,10 +22,10 @@ class LoginActivity : AppCompatActivity() {
 
     private fun initClickListeners() {
         btn_sign_in.setOnClickListener {
-            startActivity(ProtocolActivity.newIntent(this))
+            startActivity(Intent(this, RegistrationActivity::class.java))
         }
         btn_sign_up.setOnClickListener {
-            startActivity(Intent(this, RegistrationActivity::class.java))
+            startActivity(ProtocolActivity.newIntent(this))
         }
         tv_forgot.setOnClickListener {
             //TODO forgot password implementation
