@@ -38,26 +38,39 @@ class ProtocolActivity : AppCompatActivity() {
     val PATH = Environment.getExternalStorageDirectory().path
     val DOCUMENT = "$PATH/protocol.pdf"
     val IMAGE = "$PATH/protocol.jpg"
-    var repository: RepositoryEuroProtocolConvertPdf = RamEuroProtocol
 
-    val protocol: EuroProtocolModel = repository.getPdfModel()
+    lateinit var repository: RepositoryEuroProtocolConvertPdf
+    lateinit var protocol: EuroProtocolModel
 
     private var state: State = State.SIGNATURE_1
 
     companion object {
 
         val ARG = "ARG"
-        fun newIntent(context: Context): Intent = Intent(context, ProtocolActivity::class.java).apply {
-            putExtra(ARG, true)
-        }
+        fun newIntent(context: Context): Intent =
+            Intent(context, ProtocolActivity::class.java).apply {
+                putExtra(ARG, true)
+            }
     }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_protocol)
         if (!isPermissionGranted()) {
-            ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.WRITE_EXTERNAL_STORAGE), 100)
+            ActivityCompat.requestPermissions(
+                this,
+                arrayOf(Manifest.permission.WRITE_EXTERNAL_STORAGE),
+                100
+            )
         }
 
+        if (intent.getBooleanExtra(ARG, true)) {
+            repository = StubRepository()
+            protocol = repository.getPdfModel()
+        } else {
+            repository = RamEuroProtocol
+            protocol = repository.getPdfModel()
+        }
         initViews()
         renderState()
     }
@@ -94,7 +107,8 @@ class ProtocolActivity : AppCompatActivity() {
     }
 
     private suspend fun draw() = withContext(Dispatchers.IO) {
-        var bitmap = BitmapFactory.decodeResource(resources, R.drawable.protocol).copy(Bitmap.Config.ARGB_8888, true)
+        var bitmap = BitmapFactory.decodeResource(resources, R.drawable.protocol)
+            .copy(Bitmap.Config.ARGB_8888, true)
         bitmap = scaleDown(bitmap)
         protocol.scheme = dw_scheme.getBitmap()
         protocol.roadAccidentParticipantOne.signature = dw_signature_1.getBitmap()
@@ -115,7 +129,8 @@ class ProtocolActivity : AppCompatActivity() {
         PdfWriter.getInstance(document, FileOutputStream(File(DOCUMENT)))
         document.open()
         val image = Image.getInstance(IMAGE)
-        val scaler = ((document.pageSize.width - document.leftMargin() - document.rightMargin())/ image.width) * 110
+        val scaler =
+            ((document.pageSize.width - document.leftMargin() - document.rightMargin()) / image.width) * 110
         image.scalePercent(scaler)
         image.alignment = Image.ALIGN_CENTER or Image.ALIGN_TOP
         document.add(image)
@@ -140,7 +155,7 @@ class ProtocolActivity : AppCompatActivity() {
     }
 
     private fun renderState() {
-        when(state) {
+        when (state) {
             State.SIGNATURE_1 -> {
                 ll_signature_1.visibility = View.VISIBLE
                 supportActionBar?.title = "Подпись водителя 1"
@@ -163,7 +178,6 @@ class ProtocolActivity : AppCompatActivity() {
             }
         }
     }
-
 
 
     enum class State {
