@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="place_of_impact_front_bumper">Передний бамбер</string>
+    <string name="place_of_impact_back_bumper">Задний бампер</string>
+    <string name="place_of_impact_front_left_wing">Переднее левое крыло</string>
+    <string name="place_of_impact_back_left_wing">Переднее правое крыло</string>
+    <string name="place_of_impact_front_right_wing">Заднее правое крыло</string>
+    <string name="place_of_impact_back_right_wing">Заднее левое крыло</string>
+    <string name="place_of_impact_left_door">Левая дверь</string>
+    <string name="place_of_impact_right_door">Правая дверь</string>
+
+
+    <string name="place_of_impact_title_next_button">Дальшле</string>
+</resources>
