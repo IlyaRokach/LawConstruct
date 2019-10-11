@@ -125,7 +125,7 @@ class PlaceOfImpactFragment : BaseRegistrationFragment<IPlaceOfImpactPresenter>(
 
     override fun approveNext(isApprove: Boolean) {
         if (isApprove) {
-            nextCallback?.onNext(RegistrationStep.STEP_PLACE_OF_IMPACT)
+            nextCallback?.onNext(RegistrationStep.STEP_PLACE_OF_IMPACT, getTypeDriver())
         } else {
             Toast.makeText(activity, "Есть незаполненные обязательные поля!!", Toast.LENGTH_SHORT)
                 .show()

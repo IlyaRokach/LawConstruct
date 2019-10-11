@@ -55,22 +55,6 @@
                 app:layout_constraintStart_toStartOf="parent" />
 
         <EditText
-                android:id="@+id/et_date_birthday"
-                style="@style/EditTextStyle"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/default_margin_12"
-                android:layout_marginStart="@dimen/default_margin_48"
-                android:layout_marginEnd="@dimen/default_margin_48"
-                android:ems="@dimen/default_text_size_14"
-                android:hint="@string/driver_info_date_birthday"
-                android:inputType="date"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/et_patronymic_name" />
-
-
-        <EditText
                 android:id="@+id/et_residence_address"
                 style="@style/EditTextStyle"
                 android:layout_width="match_parent"
@@ -81,7 +65,7 @@
                 android:ems="@dimen/default_text_size_14"
                 android:hint="@string/driver_info_residence_address"
                 android:inputType="text"
-                app:layout_constraintTop_toBottomOf="@id/et_date_birthday"
+                app:layout_constraintTop_toBottomOf="@id/et_patronymic_name"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
 
@@ -116,97 +100,23 @@
                 app:layout_constraintStart_toStartOf="parent" />
 
         <EditText
-                android:id="@+id/et_number_license"
+                android:id="@+id/et_phone"
                 style="@style/EditTextStyle"
-
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:ems="@dimen/default_text_size_14"
                 android:layout_marginStart="@dimen/default_margin_48"
                 android:layout_marginEnd="@dimen/default_margin_48"
-                android:layout_marginTop="@dimen/default_margin_12"
-
-                android:hint="@string/driver_info_number_license"
-
-                android:inputType="text"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/et_country_registration" />
-
-        <EditText
-                android:id="@+id/et_series_license"
-                style="@style/EditTextStyle"
-
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="@dimen/default_text_size_14"
-
-                android:layout_marginStart="@dimen/default_margin_48"
-                android:layout_marginEnd="@dimen/default_margin_48"
-                android:layout_marginTop="@dimen/default_margin_12"
-
-                android:hint="@string/driver_info_series_license"
-
-                android:inputType="text"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/et_number_license" />
-
-        <EditText
-                android:id="@+id/et_valid_finish_date"
-                style="@style/EditTextStyle"
-
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="@dimen/default_text_size_14"
-
-                android:layout_marginStart="@dimen/default_margin_48"
-                android:layout_marginEnd="@dimen/default_margin_48"
-                android:layout_marginTop="@dimen/default_margin_12"
-
-                android:hint="@string/driver_info_valid_finish_date"
-
-                android:inputType="text"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/et_series_license" />
-
-        <EditText
-                android:id="@+id/et_category_license"
-                style="@style/EditTextStyle"
-
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="@dimen/default_text_size_14"
-
-                android:layout_marginStart="@dimen/default_margin_48"
-                android:layout_marginEnd="@dimen/default_margin_48"
-                android:layout_marginTop="@dimen/default_margin_12"
-
-                android:hint="@string/driver_info_category_license"
-
-                android:inputType="text"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/et_valid_finish_date" />
-
-        <CheckBox
-                android:id="@+id/switch_is_voluntary"
-
-                style="@style/OrangeTextView"
-                android:layout_width="0dp"
-
-                android:layout_height="wrap_content"
-
                 android:layout_marginTop="@dimen/default_margin_12"
                 android:layout_marginBottom="@dimen/default_margin_12"
+                android:ems="@dimen/default_text_size_14"
+                android:hint="Телефон или e-mail"
 
-                android:text="@string/driver_info_title_text_check_box"
+                app:layout_constraintTop_toBottomOf="@id/et_country_registration"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintBottom_toTopOf="@+id/next_button"
-                app:layout_constraintEnd_toEndOf="@+id/et_category_license"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@+id/et_category_license"
-                app:layout_constraintTop_toBottomOf="@+id/et_category_license" />
+
+                android:inputType="text"/>
 
         <Button
                 android:id="@+id/next_button"
@@ -220,6 +130,5 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
-
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

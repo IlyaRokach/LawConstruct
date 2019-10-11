@@ -4,7 +4,9 @@ import by.europrotocol.data.model.PlaceOfImpact
 import by.europrotocol.fragment.base.BaseRegistrationPresenter
 import by.europrotocol.fragment.base.TypeDriver
 
-class PlaceOfImpactPresenter(placeOfImpactView: IPlaceOfImpactView) : BaseRegistrationPresenter<IPlaceOfImpactView>(placeOfImpactView), IPlaceOfImpactPresenter  {
+class PlaceOfImpactPresenter(
+    placeOfImpactView: IPlaceOfImpactView
+) : BaseRegistrationPresenter<IPlaceOfImpactView>(placeOfImpactView), IPlaceOfImpactPresenter  {
 
     private val setPlaceOfImpact: MutableSet<PlaceOfImpact> = mutableSetOf()
 

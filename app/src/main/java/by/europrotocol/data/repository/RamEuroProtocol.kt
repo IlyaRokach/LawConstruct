@@ -1,6 +1,7 @@
 package by.europrotocol.data.repository
 
 import by.europrotocol.data.model.*
+import by.europrotocol.fragment.base.TypeDriver
 
 object RamEuroProtocol : EuroProtocolRepository {
 
@@ -105,6 +106,14 @@ object RamEuroProtocol : EuroProtocolRepository {
 
     override fun saveDriverTwo(info: NotesDriver) {
         notesDriverTwo = info
+    }
+
+    override fun readPolicyholderInformation(typeDriver: TypeDriver):PolicyholderInformation? {
+        return when (typeDriver.type) {
+            TypeDriver.ONE -> policyholderInformationOne
+            TypeDriver.TWO -> policyholderInformationTwo
+            else -> null
+        }
     }
 
     override fun saveEuroProtocolInternModel(witnesses: EuroProtocolInternModel) {

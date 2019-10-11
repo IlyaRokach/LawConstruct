@@ -16,6 +16,8 @@ interface IDriverInfoPresenter: IPresenter {
 
     fun onCountry(changedText: String)
 
+    fun onZipCode(changedText: String)
+
     fun onSeries(changedText: String)
 
     fun onNumber(changedText: String)

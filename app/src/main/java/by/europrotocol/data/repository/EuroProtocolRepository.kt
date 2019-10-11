@@ -1,6 +1,7 @@
 package by.europrotocol.data.repository
 
 import by.europrotocol.data.model.*
+import by.europrotocol.fragment.base.TypeDriver
 
 interface EuroProtocolRepository: RepositoryEuroProtocolConvertPdf {
     fun saveDriverOne(info: AccidentCircumstances)
@@ -23,6 +24,8 @@ interface EuroProtocolRepository: RepositoryEuroProtocolConvertPdf {
 
     fun saveDriverOne(info: NotesDriver)
     fun saveDriverTwo(info: NotesDriver)
+
+    fun readPolicyholderInformation(typeDriver: TypeDriver): PolicyholderInformation?
 
     fun saveEuroProtocolInternModel(witnesses: EuroProtocolInternModel)
 }

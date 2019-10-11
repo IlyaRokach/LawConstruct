@@ -7,17 +7,21 @@ import androidx.appcompat.app.AppCompatActivity
 import by.europrotocol.R
 import by.europrotocol.activity.registration.INextCallback
 import by.europrotocol.activity.registration.RegistrationStep
+import by.europrotocol.fragment.base.TypeDriver
 import kotlinx.android.synthetic.main.activity_registration.*
 
 class RegistrationActivity : AppCompatActivity(), INextCallback {
 
-   companion object {
-       fun newInstance(context: Context): Intent = Intent(context, RegistrationActivity::class.java).apply {
 
-       }
-   }
+    companion object {
+        fun newInstance(context: Context): Intent =
+            Intent(context, RegistrationActivity::class.java).apply {
 
-    override fun onNext(currentStep: RegistrationStep) {
+            }
+    }
+
+    override fun onNext(currentStep: RegistrationStep, typeDriver: TypeDriver?) {
+
         when (currentStep) {
 
         }

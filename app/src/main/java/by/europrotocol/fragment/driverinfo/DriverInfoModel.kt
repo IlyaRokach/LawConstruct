@@ -6,6 +6,7 @@ class DriverInfoModel {
     var patronymic: String = ""
     var residenceAdress: String = ""
     var dateBirthday: String = ""
+    var zipCode: String = ""
     var country: String = ""
     var mobilePhoneOrEmail: String = ""
     var driverLicense: DriverLicense = DriverLicense()

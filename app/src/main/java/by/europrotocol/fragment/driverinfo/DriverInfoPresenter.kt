@@ -2,6 +2,7 @@ package by.europrotocol.fragment.driverinfo
 
 import by.europrotocol.R
 import by.europrotocol.data.model.DriverInfo
+import by.europrotocol.data.model.PolicyholderInformation
 import by.europrotocol.fragment.base.BaseRegistrationPresenter
 import by.europrotocol.fragment.base.TypeDriver
 import com.google.gson.Gson
@@ -11,6 +12,7 @@ class DriverInfoPresenter(
 ): BaseRegistrationPresenter<IDriverInfoView>(view), IDriverInfoPresenter {
 
     protected val infoModel: DriverInfoModel = DriverInfoModel()
+    private var isInsuranceHolder: Boolean = false
 
     override fun onCreateView() {
         var drivers = getView()!!.getApplication().getBase().userDao.getDriver(true).map {
@@ -49,6 +51,10 @@ class DriverInfoPresenter(
         infoModel.country = changedText
     }
 
+    override fun onZipCode(changedText: String) {
+        infoModel.zipCode = changedText
+    }
+
     override fun onSeries(changedText: String) {
         infoModel.driverLicense.series = changedText
     }
@@ -69,7 +75,7 @@ class DriverInfoPresenter(
     }
 
     override fun onCheckBox(isChecked: Boolean) {
-
+        isInsuranceHolder = isChecked
     }
 
     override fun onNextRequest() {
@@ -99,13 +105,35 @@ class DriverInfoPresenter(
             )
         )
 
-        when (getView()!!.getTypeDriver().type){
+        val insuranceHolder = PolicyholderInformation(
+            infoModel.fistName,
+            infoModel.name,
+            infoModel.patronymic,
+            infoModel.residenceAdress,
+            infoModel.country,
+            infoModel.zipCode,
+            infoModel.mobilePhoneOrEmail
+        )
+
+        val typeDriver = getView()!!.getTypeDriver().type
+        when (typeDriver){
             TypeDriver.ONE -> getView()!!.getApplication().getEuroProtocolRepository().saveDriverOne(
                 data
             )
             TypeDriver.TWO -> getView()!!.getApplication().getEuroProtocolRepository().saveDriverTwo(
                 data
             )
+        }
+
+        if (isInsuranceHolder) {
+            when (typeDriver){
+                TypeDriver.ONE -> getView()!!.getApplication().getEuroProtocolRepository().saveDriverOne(
+                insuranceHolder
+                )
+                TypeDriver.TWO -> getView()!!.getApplication().getEuroProtocolRepository().saveDriverTwo(
+                insuranceHolder
+                )
+            }
         }
 
         getView()!!.approveNext(true)
