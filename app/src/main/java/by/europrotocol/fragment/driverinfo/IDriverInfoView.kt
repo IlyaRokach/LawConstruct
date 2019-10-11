@@ -11,4 +11,6 @@ interface IDriverInfoView: IView {
     fun getTypeDriver(): TypeDriver
 
     fun approveNext(isApprove: Boolean)
+
+    fun setInitData(model: DriverInfoModel)
 }

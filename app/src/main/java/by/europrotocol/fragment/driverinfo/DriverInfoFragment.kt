@@ -226,4 +226,18 @@ class DriverInfoFragment: BaseRegistrationFragment<IDriverInfoPresenter>(), IDri
     }
 
     override fun getTypeDriver(): TypeDriver = arguments!!.get(TypeDriver.NAME_ARG) as TypeDriver
+
+    override fun setInitData(model: DriverInfoModel) {
+        etFirstName.setText(model.fistName)
+        etLastName.setText(model.name)
+        etPatronymicName.setText(model.patronymic)
+        dateBirthday.setText(model.dateBirthday)
+        residenceAdress.setText(model.residenceAdress)
+        country.setText(model.country)
+        zipCode.setText(model.zipCode)
+        series.setText(model.driverLicense.series)
+        number.setText(model.driverLicense.number)
+        category.setText(model.driverLicense.category.toString())
+        validFinishDate.setText(model.driverLicense.validFinishDate)
+    }
 }

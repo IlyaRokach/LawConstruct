@@ -1,11 +1,13 @@
 package by.europrotocol.fragment.driverinfo
 
+import by.europrotocol.BuildConfig
 import by.europrotocol.R
 import by.europrotocol.data.model.DriverInfo
 import by.europrotocol.data.model.PolicyholderInformation
 import by.europrotocol.fragment.base.BaseRegistrationPresenter
 import by.europrotocol.fragment.base.TypeDriver
 import com.google.gson.Gson
+import java.lang.reflect.Type
 
 class DriverInfoPresenter(
     view: IDriverInfoView
@@ -15,15 +17,36 @@ class DriverInfoPresenter(
     private var isInsuranceHolder: Boolean = false
 
     override fun onCreateView() {
-        var drivers = getView()!!.getApplication().getBase().userDao.getDriver(true).map {
-            var gson = Gson()
-            gson.fromJson(it.json, DriverInfo::class.java)
-        }
-        if (drivers.isNotEmpty()) {
-            val driver = drivers.first()
-            infoModel.fistName = driver.fistName
-            infoModel.name = driver.name
-            infoModel.patronymic = driver.patronymic
+        if (BuildConfig.DEBUG) {
+            when (getView()!!.getTypeDriver().type){
+                TypeDriver.ONE -> {
+                    infoModel.fistName = "Иванов"
+                    infoModel.name = "Иван"
+                    infoModel.patronymic = "Иванович"
+                    infoModel.dateBirthday = "20.09.1995"
+                    infoModel.residenceAdress = "г.Минск Шарафанянская 12А 221-3"
+                    infoModel.country = "РБ"
+                    infoModel.zipCode = "123456"
+                    infoModel.driverLicense.series = "MC"
+                    infoModel.driverLicense.number = "123456"
+                    infoModel.driverLicense.category = setOf("B")
+                    infoModel.driverLicense.validFinishDate = "25.08.2026"
+                }
+                TypeDriver.TWO -> {
+                    infoModel.fistName = "Петров"
+                    infoModel.name = "Пётр"
+                    infoModel.patronymic = "Петрович"
+                    infoModel.dateBirthday = "25.12.1991"
+                    infoModel.residenceAdress = "г.Гродно Кирилла Туровского 1А 112-1"
+                    infoModel.country = "РБ"
+                    infoModel.zipCode = "123444"
+                    infoModel.driverLicense.series = "MC"
+                    infoModel.driverLicense.number = "142424"
+                    infoModel.driverLicense.category = setOf("B","A")
+                    infoModel.driverLicense.validFinishDate = "25.08.2023"
+                }
+            }
+            getView()!!.setInitData(infoModel)
         }
     }
 
