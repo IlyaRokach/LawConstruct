@@ -25,7 +25,7 @@
     </style>
 
     <style name="EditTextStyle" parent="BaseTextStyle">
-        <item name="android:textColorHint">@color/editTextColor</item>
+        <item name="android:textColorHint">@color/grey</item>
         <item name="android:textColor">@color/baseColor</item>
     </style>
 
