@@ -150,8 +150,6 @@
             android:text="@string/persona_driver_info_download_scan">
     </Button>
 
-
-
     <Button
             android:id="@+id/next_button"
             style="@style/NextButtonStyle"

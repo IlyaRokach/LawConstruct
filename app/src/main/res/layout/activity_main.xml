@@ -6,13 +6,11 @@
         android:layout_height="match_parent"
         tools:context=".activity.MainActivity">
 
-
     <TextView
             style="@style/EditTextStyleMenuItem"
             android:id="@+id/tv_new_incident"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:background="@drawable/layout_blue_bg"
             android:text="@string/string_main_area_item_new_icident"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -24,7 +22,6 @@
             style="@style/EditTextStyleMenuItem"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:background="@drawable/layout_blue_bg"
             android:text="@string/string_main_area_item_add_info_qr"
             android:textAlignment="center"
             app:layout_constraintEnd_toEndOf="parent"
@@ -36,7 +33,6 @@
             style="@style/EditTextStyleMenuItem"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:background="@drawable/layout_blue_bg"
             android:text="@string/string_main_area_item_help_info"
             android:textAlignment="center"
             app:layout_constraintEnd_toEndOf="parent"

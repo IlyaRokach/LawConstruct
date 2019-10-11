@@ -34,6 +34,7 @@
         <item name="android:textColorHint">@color/editTextColor</item>
         <item name="android:textColor">@color/whiteColor</item>
         <item name="android:layout_margin">@dimen/default_margin_16</item>
+        <item name="android:background">@drawable/layout_blue_bg</item>
     </style>
 
     <style name="ButtonStyle">
@@ -45,15 +46,15 @@
 
     <style name="BaseMarginButtonStyle">
         <item name="android:layout_marginBottom">@dimen/default_margin_16</item>
-        <item name="android:layout_marginEnd">@dimen/default_margin_80</item>
-        <item name="android:layout_marginStart">@dimen/default_margin_80</item>
+        <item name="android:layout_marginEnd">@dimen/default_margin_16</item>
+        <item name="android:layout_marginStart">@dimen/default_margin_16</item>
     </style>
 
     <style name="NextButtonStyle" parent="BaseMarginButtonStyle">
         <item name="android:layout_height">40dp</item>
         <item name="android:textColor">@android:color/white</item>
         <item name="android:textSize">18sp</item>
-        <item name="android:background">@color/baseColor</item>
+        <item name="android:background">@drawable/layout_blue_bg</item>
     </style>
 
     <style name="OrangeTextView" parent="BaseTextStyle">
@@ -62,5 +63,18 @@
 
     <style name="GreyTextView" parent="BaseTextStyle">
         <item name="android:textColor">@color/grey</item>
+    </style>
+
+    <style name="TextViewRadioButtonStyle" parent="BaseTextStyle">
+        <item name="android:textColor">@color/colorPrimaryDark</item>
+    </style>
+
+    <style name="LinearLayoutStyleRadioButtonGroup">
+        <item name="android:layout_margin">@dimen/default_margin_16</item>
+    </style>
+
+    <style name="MyRadioButton" parent="Theme.AppCompat.Light">
+        <item name="colorControlNormal">@android:color/holo_green_dark</item>
+        <item name="colorControlActivated">@android:color/holo_orange_dark</item>
     </style>
 </resources>

@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical" android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <LinearLayout
+            android:orientation="vertical"
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        <!--item 1-->
+        <LinearLayout
+                style="@style/LinearLayoutStyleRadioButtonGroup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+            <TextView
+                    style="@style/TextViewRadioButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="textStart"
+                    android:text="@string/question_of_the_accident_item_1"/>
+            <RadioGroup
+                    android:id="@+id/circumstances_of_the_accident_item_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                <RadioButton
+                        android:theme="@style/MyRadioButton"
+                        android:id="@+id/circumstances_of_the_accident_item_1_yes"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:text="@string/question_of_the_accident_variant_yes" />
+
+                <RadioButton
+                        android:theme="@style/MyRadioButton"
+                        android:id="@+id/circumstances_of_the_accident_item_1_no"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:text="@string/question_of_the_accident_variant_no" />
+            </RadioGroup>
+        </LinearLayout>
+        <!--item 2-->
+        <LinearLayout
+                style="@style/LinearLayoutStyleRadioButtonGroup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+            <TextView
+                    style="@style/TextViewRadioButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="textStart"
+                    android:text="@string/question_of_the_accident_item_2"/>
+            <RadioGroup
+                    android:id="@+id/circumstances_of_the_accident_item_2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                <RadioButton
+                        android:theme="@style/MyRadioButton"
+                        android:id="@+id/circumstances_of_the_accident_item_2_yes"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:text="@string/question_of_the_accident_variant_yes" />
+
+                <RadioButton
+                        android:theme="@style/MyRadioButton"
+                        android:id="@+id/circumstances_of_the_accident_item_2_no"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/question_of_the_accident_variant_no" />
+            </RadioGroup>
+        </LinearLayout>
+        <!--item 3-->
+        <LinearLayout
+                style="@style/LinearLayoutStyleRadioButtonGroup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+            <TextView
+                    style="@style/TextViewRadioButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="textStart"
+                    android:text="@string/question_of_the_accident_item_3"/>
+            <RadioGroup
+                    android:id="@+id/circumstances_of_the_accident_item_3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                <RadioButton
+                        android:theme="@style/MyRadioButton"
+
+                        android:id="@+id/circumstances_of_the_accident_item_3_yes"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:text="@string/question_of_the_accident_variant_yes" />
+
+                <RadioButton
+                        android:theme="@style/MyRadioButton"
+
+                        android:id="@+id/circumstances_of_the_accident_item_3_no"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/question_of_the_accident_variant_no" />
+            </RadioGroup>
+        </LinearLayout>
+        <!--item 4-->
+        <LinearLayout
+                style="@style/LinearLayoutStyleRadioButtonGroup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+            <TextView
+                    style="@style/TextViewRadioButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="textStart"
+                    android:text="@string/question_of_the_accident_item_4"/>
+            <RadioGroup
+                    android:id="@+id/circumstances_of_the_accident_item_4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                <RadioButton
+                        android:theme="@style/MyRadioButton"
+
+                        android:id="@+id/circumstances_of_the_accident_item_4_yes"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:text="@string/question_of_the_accident_variant_yes" />
+
+                <RadioButton
+                        android:theme="@style/MyRadioButton"
+
+                        android:id="@+id/circumstances_of_the_accident_item_4_no"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/question_of_the_accident_variant_no" />
+            </RadioGroup>
+        </LinearLayout>
+        <!--item 5-->
+        <LinearLayout
+                style="@style/LinearLayoutStyleRadioButtonGroup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+            <TextView
+                    style="@style/TextViewRadioButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="textStart"
+                    android:text="@string/question_of_the_accident_item_5"/>
+            <RadioGroup
+                    android:id="@+id/circumstances_of_the_accident_item_5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                <RadioButton
+                        android:theme="@style/MyRadioButton"
+
+                        android:id="@+id/circumstances_of_the_accident_item_5_yes"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/question_of_the_accident_variant_yes" />
+
+                <RadioButton
+                        android:theme="@style/MyRadioButton"
+
+                        android:id="@+id/circumstances_of_the_accident_item_5_no"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/question_of_the_accident_variant_no" />
+            </RadioGroup>
+        </LinearLayout>
+        <!--item 6-->
+        <LinearLayout
+                style="@style/LinearLayoutStyleRadioButtonGroup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+            <TextView
+                    style="@style/TextViewRadioButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="textStart"
+                    android:text="@string/question_of_the_accident_item_6"/>
+            <RadioGroup
+                    android:id="@+id/circumstances_of_the_accident_item_6"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                <RadioButton
+                        android:theme="@style/MyRadioButton"
+
+                        android:id="@+id/circumstances_of_the_accident_item_6_yes"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="false"
+                        android:text="@string/question_of_the_accident_variant_yes" />
+
+                <RadioButton
+                        android:theme="@style/MyRadioButton"
+
+                        android:id="@+id/circumstances_of_the_accident_item_6_no"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/question_of_the_accident_variant_no" />
+            </RadioGroup>
+        </LinearLayout>
+        <!--item 7-->
+        <LinearLayout
+                style="@style/LinearLayoutStyleRadioButtonGroup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+            <TextView
+                    style="@style/TextViewRadioButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="textStart"
+                    android:text="@string/question_of_the_accident_item_7"/>
+            <RadioGroup
+                    android:id="@+id/circumstances_of_the_accident_item_7"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                <RadioButton
+                        android:theme="@style/MyRadioButton"
+
+                        android:id="@+id/circumstances_of_the_accident_item_7_yes"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="false"
+                        android:text="@string/question_of_the_accident_variant_yes" />
+
+                <RadioButton
+                        android:theme="@style/MyRadioButton"
+
+                        android:id="@+id/circumstances_of_the_accident_item_7_no"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/question_of_the_accident_variant_no" />
+            </RadioGroup>
+        </LinearLayout>
+        <!--item 8-->
+        <LinearLayout
+                style="@style/LinearLayoutStyleRadioButtonGroup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+            <TextView
+                    style="@style/TextViewRadioButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="textStart"
+                    android:text="@string/question_of_the_accident_item_8"/>
+            <RadioGroup
+                    android:id="@+id/circumstances_of_the_accident_item_8"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                <RadioButton
+                        android:theme="@style/MyRadioButton"
+
+                        android:id="@+id/circumstances_of_the_accident_item_8_yes"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="false"
+                        android:text="@string/question_of_the_accident_variant_yes" />
+
+                <RadioButton
+                        android:theme="@style/MyRadioButton"
+
+                        android:id="@+id/circumstances_of_the_accident_item_8_no"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/question_of_the_accident_variant_no" />
+            </RadioGroup>
+        </LinearLayout>
+
+        <Button
+                android:id="@+id/next_button"
+                style="@style/NextButtonStyle"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/question_of_the_accident_title_next_button"
+
+                android:layout_marginTop="@dimen/default_margin_12" />
+    </LinearLayout>
+</ScrollView>

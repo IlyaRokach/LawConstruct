@@ -21,8 +21,11 @@
             </intent-filter>
         </activity>
         <activity android:name=".activity.ProtocolActivity" />
+
         <activity android:name=".activity.RegistrationActivity"
-                android:theme="@style/NoActionBarTheme"/>
+                android:theme="@style/NoActionBarTheme"
+                android:screenOrientation="portrait"/>
+
         <activity android:name=".activity.LoginActivity">
         </activity>
         <activity android:name=".activity.MainActivity" />
