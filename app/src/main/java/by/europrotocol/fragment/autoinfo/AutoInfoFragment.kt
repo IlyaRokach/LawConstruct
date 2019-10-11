@@ -161,4 +161,12 @@ class AutoInfoFragment: BaseRegistrationFragment<IAutoInfoPresenter>(),
     }
 
     override fun getTypeDriver(): TypeDriver = arguments!!.get(TypeDriver.NAME_ARG) as TypeDriver
+
+    override fun setInitModel(model: AutoInfoModel) {
+        etCarModel.setText(model.carModel)
+        etRegistrationNumber.setText(model.registrationNumber)
+        etCountryRegistration.setText(model.countryRegistration)
+
+        switchIsAvailableTrailer.isChecked = false
+    }
 }

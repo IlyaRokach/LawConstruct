@@ -1,5 +1,6 @@
 package by.europrotocol.fragment.autoinfo
 
+import by.europrotocol.BuildConfig
 import by.europrotocol.R
 import by.europrotocol.data.model.AutoInfo
 import by.europrotocol.data.model.DriverInfo
@@ -15,6 +16,26 @@ import io.reactivex.functions.Consumer
 class AutoInfoDriverPresenter(view: IAutoInfoDriverView): BaseRegistrationPresenter<IAutoInfoDriverView>(view), IAutoInfoPresenter {
 
     protected val autoInfoModel: AutoInfoModel = AutoInfoModel()
+
+    override fun onCreateView() {
+        super.onCreateView()
+
+        if (BuildConfig.DEBUG) {
+            when (getView()!!.getTypeDriver().type){
+                TypeDriver.ONE -> {
+                    autoInfoModel.carModel = "CHEWROLET CAMARO"
+                    autoInfoModel.countryRegistration = "РБ"
+                    autoInfoModel.registrationNumber = "1234-АВ-7"
+                }
+                TypeDriver.TWO -> {
+                    autoInfoModel.carModel = "PEUGEOT 403"
+                    autoInfoModel.countryRegistration = "РБ"
+                    autoInfoModel.registrationNumber = "4432-АВ-4"
+                }
+            }
+            getView()!!.setInitModel(autoInfoModel)
+        }
+    }
 
     override fun onChangeCarModel(changedText: String) {
         autoInfoModel.carModel = changedText
