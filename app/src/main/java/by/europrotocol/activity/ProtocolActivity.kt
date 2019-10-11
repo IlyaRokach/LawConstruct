@@ -1,6 +1,8 @@
 package by.europrotocol.activity
 
 import android.Manifest
+import android.content.Context
+import android.content.Intent
 import android.content.pm.PackageManager
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
@@ -30,22 +32,32 @@ import java.io.FileOutputStream
 import java.io.IOException
 
 class ProtocolActivity : AppCompatActivity() {
+
     val width = 849
     val height = 1200
     val PATH = Environment.getExternalStorageDirectory().path
     val DOCUMENT = "$PATH/protocol.pdf"
     val IMAGE = "$PATH/protocol.jpg"
-    val repository: RepositoryEuroProtocolConvertPdf = RamEuroProtocol
+    var repository: RepositoryEuroProtocolConvertPdf = RamEuroProtocol
+
     val protocol: EuroProtocolModel = repository.getPdfModel()
 
     private var state: State = State.SIGNATURE_1
 
+    companion object {
+
+        val ARG = "ARG"
+        fun newIntent(context: Context): Intent = Intent(context, ProtocolActivity::class.java).apply {
+            putExtra(ARG, true)
+        }
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_protocol)
         if (!isPermissionGranted()) {
             ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.WRITE_EXTERNAL_STORAGE), 100)
         }
+
         initViews()
         renderState()
     }
@@ -151,6 +163,8 @@ class ProtocolActivity : AppCompatActivity() {
             }
         }
     }
+
+
 
     enum class State {
         SIGNATURE_1,
