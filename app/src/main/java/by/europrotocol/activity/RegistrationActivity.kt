@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
 import by.europrotocol.R
 import by.europrotocol.activity.registration.INextCallback
 import by.europrotocol.activity.registration.RegistrationStep
@@ -54,7 +55,7 @@ class RegistrationActivity : AppCompatActivity(), INextCallback {
 
         val value = getNextStep(currentStep, typeDriver)
 
-        when (value.first) {
+        val fragment = when (value.first) {
             RegistrationStep.STEP_PERSONAL_DRIVER_INFO -> PrivateInfoDriverFragment.newInstance()
             RegistrationStep.STEP_INSURER_INFO -> InsurerInformationFragment.newInstance(typeDriver!!)
             RegistrationStep.STEP_DRIVER_INFO -> DriverInfoFragment.newInstance(typeDriver!!)
@@ -65,7 +66,18 @@ class RegistrationActivity : AppCompatActivity(), INextCallback {
             RegistrationStep.STEP_PLACE_OF_IMPACT -> PlaceOfImpactFragment.newInstance(typeDriver!!)
             RegistrationStep.STEP_PLACE_OF_ACCIDENT -> PlaceOfAccidentFragment.newInstance()
             RegistrationStep.STEP_MY_NOTES -> ClaimToBeResponsibleForTheHarmFragment.newInstance(typeDriver!!)
-            RegistrationStep.STEP_GENERATE_PDF -> startActivity(Intent(this, ProtocolActivity::class.java))
+            RegistrationStep.STEP_GENERATE_PDF -> {
+                startActivity(Intent(this, ProtocolActivity::class.java))
+                null
+            }
+            else -> null
+        }
+
+        if (fragment != null) {
+            supportFragmentManager.beginTransaction().replace(
+                R.id.container_registration,
+                fragment
+            ).commitAllowingStateLoss()
         }
     }
 
@@ -90,6 +102,10 @@ class RegistrationActivity : AppCompatActivity(), INextCallback {
         setContentView(R.layout.activity_registration)
         setSupportActionBar(toolbar)
 
+        supportFragmentManager.beginTransaction().replace(
+            R.id.container_registration,
+            QuestionOfTheAccidentFragment.newInstance()
+        ).commitAllowingStateLoss()
 
     }
 }
