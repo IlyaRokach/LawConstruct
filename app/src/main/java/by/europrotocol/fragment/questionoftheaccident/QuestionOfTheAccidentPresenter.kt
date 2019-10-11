@@ -19,7 +19,7 @@ class QuestionOfTheAccidentPresenter(
 
     override fun onChangeItem2(isChecked: Boolean) {
         questionOfTheAccidentModel.item2 = isChecked
-        if (isChecked) {
+        if (!isChecked) {
             getView()!!.showNeedStateTrafficInspectorateCall()
         }
     }
@@ -33,14 +33,14 @@ class QuestionOfTheAccidentPresenter(
 
     override fun onChangeItem4(isChecked: Boolean) {
         questionOfTheAccidentModel.item4 = isChecked
-        if (isChecked) {
+        if (!isChecked) {
             getView()!!.showNeedStateTrafficInspectorateCall()
         }
     }
 
     override fun onChangeItem5(isChecked: Boolean) {
         questionOfTheAccidentModel.item5 = isChecked
-        if (isChecked) {
+        if (!isChecked) {
             getView()!!.showNeedStateTrafficInspectorateCall()
         }
     }
@@ -69,14 +69,15 @@ class QuestionOfTheAccidentPresenter(
     override fun onNextRequest() {
         var result = true
 
-        result = !(questionOfTheAccidentModel.item1 ?: false) and result
-        result = !(questionOfTheAccidentModel.item2 ?: false) and result
-        result = !(questionOfTheAccidentModel.item3 ?: false) and result
-        result = !(questionOfTheAccidentModel.item4 ?: false) and result
-        result = !(questionOfTheAccidentModel.item5 ?: false) and result
-        result = !(questionOfTheAccidentModel.item6 ?: false) and result
-        result = !(questionOfTheAccidentModel.item7 ?: false) and result
-        result = !(questionOfTheAccidentModel.item8 ?: false) and result
+        result = !(questionOfTheAccidentModel.item1 ?: false) && result
+        result = (questionOfTheAccidentModel.item2 ?: true) && result
+        result = !(questionOfTheAccidentModel.item3 ?: false) && result
+        result = (questionOfTheAccidentModel.item4 ?: true) && result
+        result = (questionOfTheAccidentModel.item5 ?: true) && result
+        result = !(questionOfTheAccidentModel.item6 ?: false) && result
+        result = !(questionOfTheAccidentModel.item7 ?: false) && result
+        result = !(questionOfTheAccidentModel.item8 ?: false) && result
+
 
         getView()!!.approveNext(result)
     }
