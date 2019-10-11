@@ -87,6 +87,6 @@ class StubRepository: RepositoryEuroProtocolConvertPdf {
             placeOfInitialStrike = setOf(PlaceOfImpact.FRONT_BUMPER, PlaceOfImpact.FRONT_LEFT_WING),
             iClaimToBeResponsibleForTheHarm = true
         ),
-        witnesses = ""
+        witnesses = "Сидоров Иван Семенович, +37529569xxxx"
     )
 }
