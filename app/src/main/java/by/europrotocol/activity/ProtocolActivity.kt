@@ -38,9 +38,9 @@ class ProtocolActivity : AppCompatActivity() {
     val PATH = Environment.getExternalStorageDirectory().path
     val DOCUMENT = "$PATH/protocol.pdf"
     val IMAGE = "$PATH/protocol.jpg"
-    var repository: RepositoryEuroProtocolConvertPdf = RamEuroProtocol
+    lateinit var repository: RepositoryEuroProtocolConvertPdf
 
-    val protocol: EuroProtocolModel = repository.getPdfModel()
+    lateinit var protocol: EuroProtocolModel
 
     private var state: State = State.SIGNATURE_1
 
@@ -57,6 +57,15 @@ class ProtocolActivity : AppCompatActivity() {
         if (!isPermissionGranted()) {
             ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.WRITE_EXTERNAL_STORAGE), 100)
         }
+
+        val check: Boolean? = intent.extras?.get(ARG) as Boolean? ?: false
+
+        repository = if (check != null && check){
+            StubRepository()
+        } else {
+            RamEuroProtocol
+        }
+        protocol = repository.getPdfModel()
 
         initViews()
         renderState()
