@@ -35,7 +35,6 @@ open abstract class BaseRegistrationFragment<T: IPresenter>: Fragment, IView {
         return this.presenter
     }
 
-
     constructor(): super()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -49,6 +48,8 @@ open abstract class BaseRegistrationFragment<T: IPresenter>: Fragment, IView {
                 titleString = savedInstanceState.getString(TITLE_STRING)
             }
         }
+
+        presenter.onCreate()
     }
 
     override fun getApplication(): EuroProtocolApplication = this.activity!!.application as EuroProtocolApplication
@@ -62,7 +63,7 @@ open abstract class BaseRegistrationFragment<T: IPresenter>: Fragment, IView {
         ButterKnife.bind(this, view)
         view = onCreateViewFragment(view)
         if (presenter != null) {
-            presenter.onCreate()
+            presenter.onCreateView()
         }
 
         return view

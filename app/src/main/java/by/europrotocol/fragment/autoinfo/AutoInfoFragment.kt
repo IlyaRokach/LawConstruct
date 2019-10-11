@@ -111,6 +111,14 @@ class AutoInfoFragment: BaseRegistrationFragment<IAutoInfoPresenter>(),
         switchIsAvailableTrailer.setOnCheckedChangeListener(object: CompoundButton.OnCheckedChangeListener{
             override fun onCheckedChanged(buttonView: CompoundButton?, isChecked: Boolean) {
                 getController().onChangeChecedAvailableTrailer(isChecked)
+                if (isChecked) {
+                    llTrailerInfo.visibility = View.VISIBLE
+
+                } else {
+                    llTrailerInfo.visibility = View.GONE
+                    getController().onChangeRegistrationNumberTrailer("")
+                    getController().onChangeCountryRegistrationTrailer("")
+                }
             }
         })
     }

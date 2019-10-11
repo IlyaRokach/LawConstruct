@@ -12,7 +12,6 @@
             android:layout_marginTop="@dimen/default_margin_12"
             android:layout_marginStart="@dimen/default_margin_48"
             android:layout_marginEnd="@dimen/default_margin_48"
-            android:ems="@dimen/default_text_size_14"
             android:hint="@string/auto_info_hint_car_model"
             android:inputType="text"
             app:layout_constraintEnd_toEndOf="parent"
@@ -28,7 +27,6 @@
             android:layout_marginStart="@dimen/default_margin_48"
             android:layout_marginEnd="@dimen/default_margin_48"
             android:layout_marginTop="@dimen/default_margin_12"
-            android:ems="@dimen/default_text_size_14"
             android:hint="@string/auto_info_hint_registration_number"
             android:inputType="text"
             app:layout_constraintTop_toBottomOf="@id/et_car_model"
@@ -43,7 +41,6 @@
             android:layout_marginStart="@dimen/default_margin_48"
             android:layout_marginEnd="@dimen/default_margin_48"
             android:layout_marginTop="@dimen/default_margin_12"
-            android:ems="@dimen/default_text_size_14"
             android:hint="@string/auto_info_hint_country_registration"
             android:inputType="text"
             app:layout_constraintTop_toBottomOf="@id/et_registration_number"
@@ -55,11 +52,9 @@
 
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-
             style="@style/OrangeTextView"
 
             android:layout_marginTop="@dimen/default_margin_12"
-
             android:text="@string/auto_info_title_is_use_available"
             app:layout_constraintStart_toStartOf="@+id/et_country_registration"
             app:layout_constraintTop_toBottomOf="@+id/et_country_registration" />
@@ -97,7 +92,6 @@
                 android:layout_marginStart="@dimen/default_margin_48"
                 android:layout_marginEnd="@dimen/default_margin_48"
                 android:layout_marginTop="@dimen/default_margin_12"
-                android:ems="@dimen/default_text_size_14"
                 android:hint="@string/auto_info_hint_registration_number_trailer"
                 android:inputType="text"
                 app:layout_constraintTop_toBottomOf="@id/et_car_model"
@@ -112,7 +106,6 @@
                 android:layout_marginStart="@dimen/default_margin_48"
                 android:layout_marginEnd="@dimen/default_margin_48"
                 android:layout_marginTop="@dimen/default_margin_12"
-                android:ems="@dimen/default_text_size_14"
                 android:hint="@string/auto_info_hint_country_registration_trailer"
                 android:inputType="text"
                 app:layout_constraintTop_toBottomOf="@id/et_registration_number_trailer"

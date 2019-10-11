@@ -12,7 +12,6 @@
             android:id="@+id/notes"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:ems="10"
             android:inputType="textPersonName"
 
             android:layout_marginStart="@dimen/default_margin_16"

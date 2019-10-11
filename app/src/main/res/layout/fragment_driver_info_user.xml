@@ -16,7 +16,6 @@
                 android:layout_marginTop="@dimen/default_margin_12"
                 android:layout_marginStart="@dimen/default_margin_48"
                 android:layout_marginEnd="@dimen/default_margin_48"
-                android:ems="@dimen/default_text_size_14"
                 android:hint="@string/persona_driver_info_hint_first_name"
                 android:inputType="text"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -32,7 +31,6 @@
                 android:layout_marginStart="@dimen/default_margin_48"
                 android:layout_marginEnd="@dimen/default_margin_48"
                 android:layout_marginTop="@dimen/default_margin_12"
-                android:ems="@dimen/default_text_size_14"
                 android:hint="@string/persona_driver_info_hint_last_name"
                 android:inputType="text"
                 app:layout_constraintTop_toBottomOf="@id/et_first_name"
@@ -47,7 +45,6 @@
                 android:layout_marginStart="@dimen/default_margin_48"
                 android:layout_marginEnd="@dimen/default_margin_48"
                 android:layout_marginTop="@dimen/default_margin_12"
-                android:ems="@dimen/default_text_size_14"
                 android:hint="@string/persona_driver_info_hint_patronymic_name"
                 android:inputType="text"
                 app:layout_constraintTop_toBottomOf="@id/et_last_name"
@@ -62,7 +59,6 @@
                 android:layout_marginTop="@dimen/default_margin_12"
                 android:layout_marginStart="@dimen/default_margin_48"
                 android:layout_marginEnd="@dimen/default_margin_48"
-                android:ems="@dimen/default_text_size_14"
                 android:hint="@string/driver_info_date_birthday"
                 android:inputType="date"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -78,7 +74,6 @@
                 android:layout_marginStart="@dimen/default_margin_48"
                 android:layout_marginEnd="@dimen/default_margin_48"
                 android:layout_marginTop="@dimen/default_margin_12"
-                android:ems="@dimen/default_text_size_14"
                 android:hint="@string/driver_info_residence_address"
                 android:inputType="text"
                 app:layout_constraintTop_toBottomOf="@id/et_date_birthday"
@@ -93,7 +88,6 @@
                 android:layout_marginStart="@dimen/default_margin_48"
                 android:layout_marginEnd="@dimen/default_margin_48"
                 android:layout_marginTop="@dimen/default_margin_12"
-                android:ems="@dimen/default_text_size_14"
                 android:hint="@string/driver_info_zip_code"
                 android:inputType="text"
                 app:layout_constraintTop_toBottomOf="@id/et_residence_address"
@@ -108,7 +102,6 @@
                 android:layout_marginStart="@dimen/default_margin_48"
                 android:layout_marginEnd="@dimen/default_margin_48"
                 android:layout_marginTop="@dimen/default_margin_12"
-                android:ems="@dimen/default_text_size_14"
                 android:hint="@string/driver_info_country"
                 android:inputType="text"
                 app:layout_constraintTop_toBottomOf="@id/et_zip_code"
@@ -121,7 +114,6 @@
 
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:ems="@dimen/default_text_size_14"
                 android:layout_marginStart="@dimen/default_margin_48"
                 android:layout_marginEnd="@dimen/default_margin_48"
                 android:layout_marginTop="@dimen/default_margin_12"
@@ -139,7 +131,6 @@
 
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:ems="@dimen/default_text_size_14"
 
                 android:layout_marginStart="@dimen/default_margin_48"
                 android:layout_marginEnd="@dimen/default_margin_48"
@@ -158,7 +149,7 @@
 
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:ems="@dimen/default_text_size_14"
+
 
                 android:layout_marginStart="@dimen/default_margin_48"
                 android:layout_marginEnd="@dimen/default_margin_48"
@@ -177,7 +168,6 @@
 
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:ems="@dimen/default_text_size_14"
 
                 android:layout_marginStart="@dimen/default_margin_48"
                 android:layout_marginEnd="@dimen/default_margin_48"

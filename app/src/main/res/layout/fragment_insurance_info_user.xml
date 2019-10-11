@@ -13,7 +13,6 @@
             android:layout_marginTop="@dimen/default_margin_12"
             android:layout_marginStart="@dimen/default_margin_48"
             android:layout_marginEnd="@dimen/default_margin_48"
-            android:ems="@dimen/default_text_size_14"
             android:hint="@string/insurance_info_hint_name_company"
             android:inputType="text"
             app:layout_constraintEnd_toEndOf="parent"
@@ -29,7 +28,6 @@
             android:layout_marginStart="@dimen/default_margin_48"
             android:layout_marginEnd="@dimen/default_margin_48"
             android:layout_marginTop="@dimen/default_margin_12"
-            android:ems="@dimen/default_text_size_14"
             android:hint="@string/insurance_info_certificate"
             android:inputType="text"
             app:layout_constraintTop_toBottomOf="@id/et_name_company"
@@ -44,7 +42,7 @@
             android:layout_marginStart="@dimen/default_margin_48"
             android:layout_marginEnd="@dimen/default_margin_48"
             android:layout_marginTop="@dimen/default_margin_12"
-            android:ems="@dimen/default_text_size_14"
+
             android:hint="@string/insurance_info_hint_series"
             android:inputType="text"
             app:layout_constraintTop_toBottomOf="@id/et_certificate"
@@ -59,7 +57,7 @@
             android:layout_marginStart="@dimen/default_margin_48"
             android:layout_marginEnd="@dimen/default_margin_48"
             android:layout_marginTop="@dimen/default_margin_12"
-            android:ems="@dimen/default_text_size_14"
+
             android:hint="@string/insurance_info_hint_number"
             android:inputType="text"
             app:layout_constraintTop_toBottomOf="@id/et_series"
@@ -74,7 +72,7 @@
             android:layout_marginStart="@dimen/default_margin_48"
             android:layout_marginEnd="@dimen/default_margin_48"
             android:layout_marginTop="@dimen/default_margin_12"
-            android:ems="@dimen/default_text_size_14"
+
             android:hint="@string/insurance_info_country_actions"
             android:inputType="text"
             app:layout_constraintTop_toBottomOf="@id/et_number"
@@ -87,7 +85,7 @@
 
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:ems="@dimen/default_text_size_14"
+
             android:layout_marginStart="@dimen/default_margin_48"
             android:layout_marginEnd="@dimen/default_margin_48"
             android:layout_marginTop="@dimen/default_margin_12"
@@ -105,7 +103,7 @@
 
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:ems="@dimen/default_text_size_14"
+
 
             android:layout_marginStart="@dimen/default_margin_48"
             android:layout_marginEnd="@dimen/default_margin_48"

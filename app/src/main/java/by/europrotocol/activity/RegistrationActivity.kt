@@ -57,15 +57,15 @@ class RegistrationActivity : AppCompatActivity(), INextCallback {
 
         val fragment = when (value.first) {
             RegistrationStep.STEP_PERSONAL_DRIVER_INFO -> PrivateInfoDriverFragment.newInstance()
-            RegistrationStep.STEP_INSURER_INFO -> InsurerInformationFragment.newInstance(typeDriver!!)
-            RegistrationStep.STEP_DRIVER_INFO -> DriverInfoFragment.newInstance(typeDriver!!)
-            RegistrationStep.STEP_PLACE_HOLDER_DATA -> PolicyholderInformationFragment.newInstance(typeDriver!!)
-            RegistrationStep.STEP_AUTO_INFO -> AutoInfoFragment.newInstance(typeDriver!!)
+            RegistrationStep.STEP_INSURER_INFO -> InsurerInformationFragment.newInstance(value.second!!)
+            RegistrationStep.STEP_DRIVER_INFO -> DriverInfoFragment.newInstance(value.second!!)
+            RegistrationStep.STEP_PLACE_HOLDER_DATA -> PolicyholderInformationFragment.newInstance(value.second!!)
+            RegistrationStep.STEP_AUTO_INFO -> AutoInfoFragment.newInstance(value.second!!)
             RegistrationStep.STEP_QUESTION_ACCIDENT -> QuestionOfTheAccidentFragment.newInstance()
-            RegistrationStep.STEP_CIRCUMSTANCES_OF_AN_ACCIDENT -> CircumstancesOfTheAccidentFragment.newInstance(typeDriver!!)
-            RegistrationStep.STEP_PLACE_OF_IMPACT -> PlaceOfImpactFragment.newInstance(typeDriver!!)
+            RegistrationStep.STEP_CIRCUMSTANCES_OF_AN_ACCIDENT -> CircumstancesOfTheAccidentFragment.newInstance(value.second!!)
+            RegistrationStep.STEP_PLACE_OF_IMPACT -> PlaceOfImpactFragment.newInstance(value.second!!)
             RegistrationStep.STEP_PLACE_OF_ACCIDENT -> PlaceOfAccidentFragment.newInstance()
-            RegistrationStep.STEP_MY_NOTES -> ClaimToBeResponsibleForTheHarmFragment.newInstance(typeDriver!!)
+            RegistrationStep.STEP_MY_NOTES -> ClaimToBeResponsibleForTheHarmFragment.newInstance(value.second!!)
             RegistrationStep.STEP_GENERATE_PDF -> {
                 startActivity(Intent(this, ProtocolActivity::class.java))
                 null
@@ -90,6 +90,7 @@ class RegistrationActivity : AppCompatActivity(), INextCallback {
             if (pair.first == currentStep.step &&
                 ( ( (typeDriver != null && pair.second != null) && typeDriver.type == pair.second!!.type) || typeDriver == null && pair.second == null) ) {
                 next = (index + 1)
+                break
             }
             index++
         }
