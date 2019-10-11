@@ -95,7 +95,7 @@ class PrivateInfoDriverFragment: BaseRegistrationFragment<IPrivateInfoDriverPres
 
     override fun approveNext(isApprove: Boolean) {
         if (isApprove) {
-            nextCallback?.onNext(RegistrationStep.STEP_PERSONAL_DRIVER_INFO)
+            nextCallback?.onNext(RegistrationStep(RegistrationStep.STEP_PERSONAL_DRIVER_INFO))
         } else {
             Toast.makeText(activity, "Есть незаполненные обязательные поля!!", Toast.LENGTH_SHORT).show()
         }

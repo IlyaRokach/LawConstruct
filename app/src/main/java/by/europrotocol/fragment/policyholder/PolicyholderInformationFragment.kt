@@ -159,7 +159,7 @@ class PolicyholderInformationFragment : BaseRegistrationFragment<IPolicyholderIn
 
     override fun approveNext(isApprove: Boolean) {
         if (isApprove) {
-            nextCallback?.onNext(RegistrationStep.STEP_PLACE_HOLDER_DATA)
+            nextCallback?.onNext(RegistrationStep(RegistrationStep.STEP_PLACE_HOLDER_DATA), getTypeDriver())
         } else {
             Toast.makeText(activity, "Есть незаполненные обязательные поля!!", Toast.LENGTH_SHORT).show()
         }

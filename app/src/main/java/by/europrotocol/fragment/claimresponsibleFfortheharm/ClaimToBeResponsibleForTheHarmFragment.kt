@@ -67,7 +67,7 @@ class ClaimToBeResponsibleForTheHarmFragment: BaseRegistrationFragment<IClaimToB
 
     override fun approveNext(isApprove: Boolean) {
         if (isApprove) {
-            nextCallback?.onNext(RegistrationStep.STEP_MY_NOTES)
+            nextCallback?.onNext(RegistrationStep(RegistrationStep.STEP_MY_NOTES), getTypeDriver())
         } else {
             Toast.makeText(activity, "Есть незаполненные обязательные поля!!", Toast.LENGTH_SHORT).show()
         }

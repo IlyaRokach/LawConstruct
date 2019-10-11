@@ -147,7 +147,7 @@ class QuestionOfTheAccidentFragment: BaseRegistrationFragment<IQuestionOfTheAcci
 
     override fun approveNext(isApprove: Boolean) {
         if (isApprove) {
-            nextCallback?.onNext(RegistrationStep.STEP_QUESTION_ACCIDENT)
+            nextCallback?.onNext(RegistrationStep(RegistrationStep.STEP_QUESTION_ACCIDENT))
         } else {
             Toast.makeText(activity, "Есть незаполненные обязательные поля!!", Toast.LENGTH_SHORT).show()
         }

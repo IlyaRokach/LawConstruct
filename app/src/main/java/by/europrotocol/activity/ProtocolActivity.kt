@@ -13,6 +13,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import by.europrotocol.R
 import by.europrotocol.data.model.EuroProtocolModel
+import by.europrotocol.data.repository.RamEuroProtocol
 import by.europrotocol.data.repository.RepositoryEuroProtocolConvertPdf
 import by.europrotocol.data.repository.StubRepository
 import by.europrotocol.drawing.ProtocolDrawer
@@ -34,7 +35,7 @@ class ProtocolActivity : AppCompatActivity() {
     val PATH = Environment.getExternalStorageDirectory().path
     val DOCUMENT = "$PATH/protocol.pdf"
     val IMAGE = "$PATH/protocol.jpg"
-    val repository: RepositoryEuroProtocolConvertPdf = StubRepository()
+    val repository: RepositoryEuroProtocolConvertPdf = RamEuroProtocol
     val protocol: EuroProtocolModel = repository.getPdfModel()
 
     private var state: State = State.SIGNATURE_1

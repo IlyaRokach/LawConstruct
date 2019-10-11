@@ -165,7 +165,7 @@ class InsurerInformationFragment: BaseRegistrationFragment<IInsurerInformationPr
 
     override fun approveNext(isApprove: Boolean) {
         if (isApprove) {
-            nextCallback?.onNext(RegistrationStep.STEP_INSURER_INFO)
+            nextCallback?.onNext(RegistrationStep(RegistrationStep.STEP_INSURER_INFO), getTypeDriver())
         } else {
             Toast.makeText(activity, "Есть незаполненные обязательные поля!!", Toast.LENGTH_SHORT).show()
         }

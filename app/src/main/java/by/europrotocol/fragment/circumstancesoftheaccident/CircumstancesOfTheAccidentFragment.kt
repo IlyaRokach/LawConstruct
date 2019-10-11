@@ -125,7 +125,7 @@ class CircumstancesOfTheAccidentFragment: BaseRegistrationFragment<ICircumstance
 
     override fun approveNext(isApprove: Boolean) {
         if (isApprove) {
-            nextCallback?.onNext(RegistrationStep.STEP_CIRCUMSTANCES_OF_AN_ACCIDENT)
+            nextCallback?.onNext(RegistrationStep(RegistrationStep.STEP_CIRCUMSTANCES_OF_AN_ACCIDENT), getTypeDriver())
         } else {
             Toast.makeText(activity, "Минимум один пункт должен быть выбран!!", Toast.LENGTH_SHORT).show()
         }

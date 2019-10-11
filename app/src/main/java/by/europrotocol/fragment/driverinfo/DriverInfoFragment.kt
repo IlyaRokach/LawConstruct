@@ -219,7 +219,7 @@ class DriverInfoFragment: BaseRegistrationFragment<IDriverInfoPresenter>(), IDri
 
     override fun approveNext(isApprove: Boolean) {
         if (isApprove) {
-            nextCallback?.onNext(RegistrationStep.STEP_DRIVER_INFO)
+            nextCallback?.onNext(RegistrationStep(RegistrationStep.STEP_DRIVER_INFO), getTypeDriver())
         } else {
             Toast.makeText(activity, "Есть незаполненные обязательные поля!!", Toast.LENGTH_SHORT).show()
         }

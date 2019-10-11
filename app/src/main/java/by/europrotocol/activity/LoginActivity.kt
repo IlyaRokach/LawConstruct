@@ -25,7 +25,7 @@ class LoginActivity : AppCompatActivity() {
             startActivity(Intent(this, ProtocolActivity::class.java))
         }
         btn_sign_up.setOnClickListener {
-//            startActivity(Intent(this, RegistrationActivity::class.java))
+            startActivity(Intent(this, RegistrationActivity::class.java))
         }
         tv_forgot.setOnClickListener {
             //TODO forgot password implementation
