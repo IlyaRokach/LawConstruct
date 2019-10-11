@@ -26,18 +26,18 @@ class RegistrationActivity : AppCompatActivity(), INextCallback {
     val list = listOf(
         Pair(RegistrationStep.STEP_QUESTION_ACCIDENT, null),
         Pair(RegistrationStep.STEP_PLACE_OF_ACCIDENT, null),
-        Pair(RegistrationStep.STEP_AUTO_INFO, TypeDriver(TypeDriver.ONE)),
-        Pair(RegistrationStep.STEP_DRIVER_INFO, TypeDriver(TypeDriver.ONE)),
-        Pair(RegistrationStep.STEP_INSURER_INFO, TypeDriver(TypeDriver.ONE)),
-        Pair(RegistrationStep.STEP_PLACE_HOLDER_DATA, TypeDriver(TypeDriver.ONE)),
+        Pair(RegistrationStep.STEP_AUTO_INFO, TypeDriver(TypeDriver.ONE)), //create pre-data debug version
+        Pair(RegistrationStep.STEP_DRIVER_INFO, TypeDriver(TypeDriver.ONE)), //create pre-data debug version
+        Pair(RegistrationStep.STEP_INSURER_INFO, TypeDriver(TypeDriver.ONE)), //create pre-data debug version
+        Pair(RegistrationStep.STEP_PLACE_HOLDER_DATA, TypeDriver(TypeDriver.ONE)), //create pre-data debug version
         Pair(RegistrationStep.STEP_PLACE_OF_IMPACT, TypeDriver(TypeDriver.ONE)),
         Pair(RegistrationStep.STEP_CIRCUMSTANCES_OF_AN_ACCIDENT, TypeDriver(TypeDriver.ONE)),
         Pair(RegistrationStep.STEP_MY_NOTES, TypeDriver(TypeDriver.ONE)),
 
-        Pair(RegistrationStep.STEP_AUTO_INFO, TypeDriver(TypeDriver.TWO)),
-        Pair(RegistrationStep.STEP_DRIVER_INFO, TypeDriver(TypeDriver.TWO)),
-        Pair(RegistrationStep.STEP_INSURER_INFO, TypeDriver(TypeDriver.TWO)),
-        Pair(RegistrationStep.STEP_PLACE_HOLDER_DATA, TypeDriver(TypeDriver.TWO)),
+        Pair(RegistrationStep.STEP_AUTO_INFO, TypeDriver(TypeDriver.TWO)), //create pre-data debug version
+        Pair(RegistrationStep.STEP_DRIVER_INFO, TypeDriver(TypeDriver.TWO)), //create pre-data debug version
+        Pair(RegistrationStep.STEP_INSURER_INFO, TypeDriver(TypeDriver.TWO)), //create pre-data debug version
+        Pair(RegistrationStep.STEP_PLACE_HOLDER_DATA, TypeDriver(TypeDriver.TWO)), //create pre-data debug version
         Pair(RegistrationStep.STEP_PLACE_OF_IMPACT, TypeDriver(TypeDriver.TWO)),
         Pair(RegistrationStep.STEP_CIRCUMSTANCES_OF_AN_ACCIDENT, TypeDriver(TypeDriver.TWO)),
         Pair(RegistrationStep.STEP_MY_NOTES, TypeDriver(TypeDriver.TWO)),

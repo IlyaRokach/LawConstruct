@@ -1,5 +1,6 @@
 package by.europrotocol.fragment.placeofaccident
 
+import by.europrotocol.BuildConfig
 import by.europrotocol.data.model.EuroProtocolInternModel
 import by.europrotocol.data.model.EuroProtocolModel
 import by.europrotocol.fragment.base.BaseRegistrationPresenter
@@ -10,6 +11,19 @@ class PlaceOfAccidentPresenter (
     IPlaceOfAccidentPresenter {
 
     private val placeOfAccidentModel: PlaceOfAccidentModel = PlaceOfAccidentModel()
+
+    override fun onCreate() {
+        super<BaseRegistrationPresenter>.onCreate()
+
+        if (BuildConfig.DEBUG) {
+            placeOfAccidentModel.dateAccident.dateCarAccident = "5.10.2019"
+            placeOfAccidentModel.dateAccident.timeCarAccident = "14:55"
+            placeOfAccidentModel.placeAccident.placeCarAccident = "Круговое движение на площади Бангалор"
+
+            getView()!!.inifValue(placeOfAccidentModel)
+        }
+    }
+
     override fun onDate(date: String) {
         placeOfAccidentModel.dateAccident.dateCarAccident = date
     }

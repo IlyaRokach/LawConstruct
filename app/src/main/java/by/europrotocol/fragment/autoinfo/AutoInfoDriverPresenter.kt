@@ -17,9 +17,8 @@ class AutoInfoDriverPresenter(view: IAutoInfoDriverView): BaseRegistrationPresen
 
     protected val autoInfoModel: AutoInfoModel = AutoInfoModel()
 
-    override fun onCreateView() {
-        super.onCreateView()
-
+    override fun onCreate() {
+        super<BaseRegistrationPresenter>.onCreate()
         if (BuildConfig.DEBUG) {
             when (getView()!!.getTypeDriver().type){
                 TypeDriver.ONE -> {

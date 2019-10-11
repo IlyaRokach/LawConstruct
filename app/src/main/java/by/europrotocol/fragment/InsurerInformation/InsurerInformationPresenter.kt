@@ -15,8 +15,8 @@ class InsurerInformationPresenter(
 
     protected val infoModel: InsurerInformationModel = InsurerInformationModel()
 
-    override fun onCreateView() {
-        super.onCreateView()
+    override fun onCreate() {
+        super<IInsurerInformationPresenter>.onCreate()
         if (BuildConfig.DEBUG) {
             when (getView()!!.getTypeDriver().type){
                 TypeDriver.ONE -> {

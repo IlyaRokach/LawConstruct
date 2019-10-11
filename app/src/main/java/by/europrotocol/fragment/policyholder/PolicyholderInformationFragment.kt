@@ -22,7 +22,7 @@ class PolicyholderInformationFragment : BaseRegistrationFragment<IPolicyholderIn
     companion object {
         @JvmStatic
         fun newInstance(type: TypeDriver) =
-            PlaceOfImpactFragment().apply {
+            PolicyholderInformationFragment().apply {
                 arguments = Bundle().apply {
                     putParcelable(TypeDriver.NAME_ARG, type)
                 }
@@ -39,7 +39,7 @@ class PolicyholderInformationFragment : BaseRegistrationFragment<IPolicyholderIn
     protected lateinit var etPatronymicName: EditText
 
     @BindView(R.id.et_phone)
-    protected lateinit var dateBirthday: EditText
+    protected lateinit var etPhone: EditText
 
     @BindView(R.id.et_residence_address)
     protected lateinit var residenceAdress: EditText
@@ -95,14 +95,14 @@ class PolicyholderInformationFragment : BaseRegistrationFragment<IPolicyholderIn
             }
         })
 
-        dateBirthday.addTextChangedListener(object: CustomTextWatcher() {
+        etPhone.addTextChangedListener(object: CustomTextWatcher() {
 
             override fun afterTextChanged(s: Editable?) {
                 if (s?.isEmpty() == true) {
-                    dateBirthday.error = getString(R.string.error_required_field)
+                    etPhone.error = getString(R.string.error_required_field)
                     getController().onMobilePhoneOrEmail(s.toString())
                 } else {
-                    dateBirthday.error = null
+                    etPhone.error = null
                     getController().onMobilePhoneOrEmail(s.toString())
                 }
             }
@@ -166,7 +166,13 @@ class PolicyholderInformationFragment : BaseRegistrationFragment<IPolicyholderIn
     }
 
     override fun initValue(model: PolicyHolderModel) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        etFirstName.setText(model.fistName)
+        etLastName.setText(model.name)
+        etPatronymicName.setText(model.patronymic)
+        etPhone.setText(model.mobilePhoneOrEmail)
+        residenceAdress.setText(model.residenceAdress)
+        country.setText(model.country)
+        zipCode.setText(model.zipCode)
     }
 
     override fun getTypeDriver(): TypeDriver = arguments!!.get(TypeDriver.NAME_ARG) as TypeDriver

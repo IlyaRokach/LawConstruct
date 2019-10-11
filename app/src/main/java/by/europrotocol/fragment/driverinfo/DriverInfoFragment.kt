@@ -3,6 +3,8 @@ package by.europrotocol.fragment.driverinfo
 import android.os.Bundle
 import android.text.Editable
 import android.view.View
+import android.widget.CheckBox
+import android.widget.CompoundButton
 import android.widget.EditText
 import android.widget.Toast
 import butterknife.BindView
@@ -60,6 +62,9 @@ class DriverInfoFragment: BaseRegistrationFragment<IDriverInfoPresenter>(), IDri
 
     @BindView(R.id.et_valid_finish_date)
     protected lateinit var validFinishDate: EditText
+
+    @BindView(R.id.switch_is_voluntary)
+    protected lateinit var switchIsVoluntary: CheckBox
 
     override fun onInflateViewFragment(): Int = R.layout.fragment_driver_info_user
 
@@ -198,6 +203,9 @@ class DriverInfoFragment: BaseRegistrationFragment<IDriverInfoPresenter>(), IDri
                 }
             }
         })
+        switchIsVoluntary.setOnCheckedChangeListener { buttonView, isChecked ->
+            getController().onCheckBox(isChecked)
+        }
     }
 
     private fun initPresenter(){

@@ -16,7 +16,8 @@ class DriverInfoPresenter(
     protected val infoModel: DriverInfoModel = DriverInfoModel()
     private var isInsuranceHolder: Boolean = false
 
-    override fun onCreateView() {
+    override fun onCreate() {
+        super<BaseRegistrationPresenter>.onCreate()
         if (BuildConfig.DEBUG) {
             when (getView()!!.getTypeDriver().type){
                 TypeDriver.ONE -> {

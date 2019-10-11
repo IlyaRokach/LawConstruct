@@ -3,8 +3,8 @@ package by.europrotocol.fragment.circumstancesoftheaccident
 import android.os.Bundle
 import android.view.View
 import android.widget.CheckBox
-import android.widget.TextView
 import android.widget.Toast
+import androidx.annotation.Nullable
 import butterknife.BindView
 import butterknife.OnClick
 import by.europrotocol.R
@@ -23,9 +23,6 @@ class CircumstancesOfTheAccidentFragment: BaseRegistrationFragment<ICircumstance
                 }
             }
     }
-
-    @BindView(R.id.title_driver)
-    protected lateinit var titleDriver: TextView
 
     @BindView(R.id.cb_circumstances_of_the_accident_item_1)
     protected lateinit var cbItem1: CheckBox
@@ -84,7 +81,7 @@ class CircumstancesOfTheAccidentFragment: BaseRegistrationFragment<ICircumstance
     @BindView(R.id.cb_circumstances_of_the_accident_item_19)
     protected lateinit var cbItem19: CheckBox
 
-    override fun onInflateViewFragment(): Int = R.layout.fragment_insurance_info_user
+    override fun onInflateViewFragment(): Int = R.layout.fragment_circumstances_of_the_accident
 
     override fun onCreateViewFragment(view: View): View {
         initPresenter()

@@ -113,4 +113,10 @@ class PlaceOfAccidentFragment: BaseRegistrationFragment<IPlaceOfAccidentPresente
             Toast.makeText(activity, "Есть незаполненные обязательные поля!!", Toast.LENGTH_SHORT).show()
         }
     }
+
+    override fun inifValue(model: PlaceOfAccidentModel) {
+        etDate.setText(model.dateAccident.dateCarAccident)
+        etTime.setText(model.dateAccident.timeCarAccident)
+        etPlace.setText(model.placeAccident.placeCarAccident)
+    }
 }
