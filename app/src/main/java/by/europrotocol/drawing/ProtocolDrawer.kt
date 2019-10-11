@@ -4,10 +4,13 @@ import android.graphics.Bitmap
 import by.europrotocol.data.model.EuroProtocolModel
 import by.europrotocol.data.model.drawing.CoordinatesProvider
 
-class ProtocolDrawer(val image: Bitmap,val protocol: EuroProtocolModel) {
+class ProtocolDrawer(
+    private val image: Bitmap,
+    private val protocol: EuroProtocolModel
+) {
     private val drawer: Drawer = Drawer(image)
-    private val provider1 = CoordinatesProvider(1, hit = protocol.roadAccidentParticipantOne.placeOfInitialStrike.first())
-    private val provider2 = CoordinatesProvider(2, hit = protocol.roadAccidentParticipantTwo.placeOfInitialStrike.first())
+    private val provider1 = CoordinatesProvider(1, hit = protocol.roadAccidentParticipantOne.placeOfInitialStrike)
+    private val provider2 = CoordinatesProvider(2, hit = protocol.roadAccidentParticipantTwo.placeOfInitialStrike)
 
 
     fun drawProtocol():Bitmap {
@@ -29,6 +32,7 @@ class ProtocolDrawer(val image: Bitmap,val protocol: EuroProtocolModel) {
         if (protocol.scheme != null) {
             drawer.drawScheme(provider1.scheme, protocol.scheme ?: return)
         }
+        drawer.drawText(provider1.witnesses, protocol.witnesses)
     }
 
     private fun drawParticipiant(
@@ -159,7 +163,13 @@ class ProtocolDrawer(val image: Bitmap,val protocol: EuroProtocolModel) {
             count++
         }
         drawer.drawText(provider.count, count.toString())
-        drawer.drawCross(provider.hitPlace)
+
+        provider.hitPlaces.forEach {
+            drawer.drawCross(it)
+        }
+
+        //TODO add multiline text drawing
+        //drawer.drawText(provider.notes, participant.myNotes)
     }
 
 }

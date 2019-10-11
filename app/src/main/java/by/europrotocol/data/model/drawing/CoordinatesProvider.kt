@@ -3,10 +3,10 @@ package by.europrotocol.data.model.drawing
 import by.europrotocol.data.model.PlaceOfImpact
 
 class CoordinatesProvider(
-    type: Int,
+    val type: Int,
     isPolicy: Boolean = false,
     isVoluntaryInsurance: Boolean = true,
-    hit: PlaceOfImpact = PlaceOfImpact.FRONT_BUMPER
+    val hit: Set<PlaceOfImpact>
 ) {
     //common information
     val date = Point(29f, 152f)
@@ -89,33 +89,43 @@ class CoordinatesProvider(
     val standVehicle = if (type == 1) Cross(Point(290f, 651f)) else Cross(Point(507f, 651f))
     val forceStop = if (type == 1) Cross(Point(290f, 671f)) else Cross(Point(507f, 671f))
     val anotherViolation = if (type == 1) Cross(Point(290f, 698f)) else Cross(Point(507f, 698f))
-    val count = if (type == 1) Point(295f, 744f) else Point(512f, 744f)
+    val count = if (type == 1) Point(295f, 744f) else Point(507f, 744f)
 
     // hit place
-    val hitPlace = if (type == 1) {
-       when(hit) {
-           PlaceOfImpact.FRONT_BUMPER -> Cross(Point(84f, 839f))
-           PlaceOfImpact.BACK_BUMPER -> Cross(Point(84f, 892f))
-           PlaceOfImpact.FRONT_LEFT_WING -> Cross(Point(74f, 847f))
-           PlaceOfImpact.FRONT_RIGHT_WING -> Cross(Point(93f,847f))
-           PlaceOfImpact.BACK_LEFT_WING -> Cross(Point(75f, 885f))
-           PlaceOfImpact.BACK_RIGHT_WING -> Cross(Point(93f, 885f))
-           PlaceOfImpact.LEFT_DOOR -> Cross(Point(74f, 865f))
-           PlaceOfImpact.RIGHT_DOOT -> Cross(Point(94f, 865f))
-       }
-    } else {
-        when(hit) {
-            PlaceOfImpact.FRONT_BUMPER -> Cross(Point(713f,839f))
-            PlaceOfImpact.BACK_BUMPER -> Cross(Point(713f,892f))
-            PlaceOfImpact.FRONT_LEFT_WING -> Cross(Point(704f,847f))
-            PlaceOfImpact.FRONT_RIGHT_WING -> Cross(Point(722f, 847f))
-            PlaceOfImpact.BACK_LEFT_WING -> Cross(Point(704f, 885f))
-            PlaceOfImpact.BACK_RIGHT_WING -> Cross(Point(722f, 885f))
-            PlaceOfImpact.LEFT_DOOR -> Cross(Point(704f, 865f))
-            PlaceOfImpact.RIGHT_DOOT -> Cross(Point(722f, 865f))
+    var hitPlaces = mutableSetOf<Cross>()
+    val notes = if(type == 1) Point(26f, 1068f) else Point(532f, 1068f)
+    val signature = if(type == 1) Point(320f, 1045f) else Point(435f, 1045f)
+    val responsibleSignature = if(type == 1) Point(182f, 1100f) else Point(694f,1100f)
+
+    init {
+        hit.forEach {
+            hitPlaces.add(getCross(it))
         }
     }
 
-    val signature = if(type == 1) Point(320f, 1045f) else Point(435f, 1045f)
-    val responsibleSignature = if(type == 1) Point(182f, 1100f) else Point(694f,1100f)
+    private fun getCross(place: PlaceOfImpact): Cross {
+        if (type == 1) {
+            return when(place) {
+                PlaceOfImpact.FRONT_BUMPER ->  Cross(Point(79f, 834f))
+                PlaceOfImpact.BACK_BUMPER -> Cross(Point(79f, 887f))
+                PlaceOfImpact.FRONT_LEFT_WING -> Cross(Point(69f, 842f))
+                PlaceOfImpact.FRONT_RIGHT_WING -> Cross(Point(88f,842f))
+                PlaceOfImpact.BACK_LEFT_WING -> Cross(Point(70f, 880f))
+                PlaceOfImpact.BACK_RIGHT_WING -> Cross(Point(88f, 880f))
+                PlaceOfImpact.LEFT_DOOR -> Cross(Point(69f, 860f))
+                PlaceOfImpact.RIGHT_DOOT -> Cross(Point(89f, 860f))
+            }
+        } else {
+            return when(place) {
+                PlaceOfImpact.FRONT_BUMPER -> Cross(Point(708f,834f))
+                PlaceOfImpact.BACK_BUMPER -> Cross(Point(708f,887f))
+                PlaceOfImpact.FRONT_LEFT_WING -> Cross(Point(699f,842f))
+                PlaceOfImpact.FRONT_RIGHT_WING -> Cross(Point(717f, 842f))
+                PlaceOfImpact.BACK_LEFT_WING -> Cross(Point(699f, 880f))
+                PlaceOfImpact.BACK_RIGHT_WING -> Cross(Point(717f, 880f))
+                PlaceOfImpact.LEFT_DOOR -> Cross(Point(699f, 860f))
+                PlaceOfImpact.RIGHT_DOOT -> Cross(Point(717f, 860f))
+            }
+        }
+    }
 }

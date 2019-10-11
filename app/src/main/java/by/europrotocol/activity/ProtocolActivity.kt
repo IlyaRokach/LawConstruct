@@ -37,7 +37,7 @@ class ProtocolActivity : AppCompatActivity() {
     val repository: RepositoryEuroProtocolConvertPdf = StubRepository()
     val protocol: EuroProtocolModel = repository.getPdfModel()
 
-    var state: State = State.SIGNATURE_1
+    private var state: State = State.SIGNATURE_1
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
