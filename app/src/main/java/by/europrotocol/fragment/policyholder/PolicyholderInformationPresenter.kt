@@ -31,21 +31,21 @@ class PolicyholderInformationPresenter(
             when (getView()!!.getTypeDriver().type){
                 TypeDriver.ONE -> {
                     infoModel.zipCode = "123456"
-                    infoModel.country = "РБ"
+                    infoModel.residenceAdress= "РБ"
                     infoModel.mobilePhoneOrEmail = "+375291233456"
                     infoModel.fistName = "Иванов"
                     infoModel.name = "Иван"
                     infoModel.patronymic = "Иванович"
-                    infoModel.residenceAdress = "г.Минск ул.Шарафанянская 22 229-4"
+                    infoModel.country = "г.Минск ул.Шарафанянская 22 229-4"
                 }
                 TypeDriver.TWO -> {
                     infoModel.zipCode = "132426"
-                    infoModel.country = "РБ"
+                    infoModel.residenceAdress = "РБ"
                     infoModel.mobilePhoneOrEmail = "+375441233456"
                     infoModel.fistName = "Петров"
                     infoModel.name = "Пётр"
                     infoModel.patronymic = "Петрович"
-                    infoModel.residenceAdress = "г.Минск ул.Уманская 22 112-4"
+                    infoModel.country = "г.Минск ул.Уманская 22 112-4"
                 }
             }
             getView()!!.initValue(infoModel)

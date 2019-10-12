@@ -64,7 +64,7 @@ class ProtocolActivity : AppCompatActivity() {
             )
         }
 
-        if (intent.getBooleanExtra(ARG, true)) {
+        if (intent.getBooleanExtra(ARG, false)) {
             repository = StubRepository()
             protocol = repository.getPdfModel()
         } else {
