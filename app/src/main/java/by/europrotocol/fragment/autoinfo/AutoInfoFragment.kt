@@ -53,6 +53,8 @@ class AutoInfoFragment: BaseRegistrationFragment<IAutoInfoPresenter>(),
 
 
     override fun onCreateViewFragment(view: View): View {
+
+        title
         initPresenter()
         initListener()
         return view

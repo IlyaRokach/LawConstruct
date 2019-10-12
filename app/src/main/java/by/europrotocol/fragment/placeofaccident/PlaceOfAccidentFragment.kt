@@ -46,6 +46,7 @@ class PlaceOfAccidentFragment: BaseRegistrationFragment<IPlaceOfAccidentPresente
 
     override fun onCreateViewFragment(view: View): View {
 
+        title = R.string.place_of_accident_title_screen
         initPresenter()
         initListener()
         return view

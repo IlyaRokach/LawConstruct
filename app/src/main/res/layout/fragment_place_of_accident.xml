@@ -113,7 +113,7 @@
 
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/place_of_impact_title_next_button"
+                android:text="@string/place_of_accident_next_button"
 
                 android:layout_marginTop="@dimen/default_margin_12" />
     </LinearLayout>

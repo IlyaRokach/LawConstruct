@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="place_of_accident_title_screen">Обстоятельства ДТП</string>
+
     <string name="place_of_accident_date">Дата ДТП</string>
     <string name="place_of_accident_time">Время ДТП</string>
     <string name="place_of_accident_witnesses">Свидетели ДТП</string>
@@ -7,9 +9,10 @@
     <string name="place_of_accident_witnesses_address">Адрес свидетеля</string>
     <string name="place_of_accident_witnesses_phone">Телефон свидетеля</string>
 
-    <string name="place_of_accident_place_address">Местро ДТП</string>
+
+    <string name="place_of_accident_place_address">Место ДТП</string>
 
     <string name="place_of_accident_add_witnesses">+ Добавить свидетеля</string>
 
-    <string name="place_of_accident_next_button">+ Добавить свидетеля</string>
+    <string name="place_of_accident_next_button">Дальше</string>
 </resources>

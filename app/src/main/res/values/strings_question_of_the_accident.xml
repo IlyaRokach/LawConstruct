@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="question_of_the_accident_item_1">1. Приченен ли вред жизни и здоровью участникам ДТП?</string>
-    <string name="question_of_the_accident_item_2">2. В ДТП учавствуют только два транспортных средства?</string>
+    <string name="question_of_the_accident_item_1">1. Причинен ли вред жизни и здоровью участникам ДТП?</string>
+    <string name="question_of_the_accident_item_2">2. В ДТП участвуют только два транспортных средства?</string>
     <string name="question_of_the_accident_item_3">3. Причинен ли вред другому имуществу в результате ДТП?</string>
-    <string name="question_of_the_accident_item_4">4. Действую ли договоры страхования у обоих участников ДТП?</string>
+    <string name="question_of_the_accident_item_4">4. Действуют ли договоры страхования у обоих участников ДТП?</string>
     <string name="question_of_the_accident_item_5">5. Имеют ли водители право на управление транспортным средством (за исключением владельца автомобиля в случае стоянки транспортного средства)?</string>
     <string name="question_of_the_accident_item_6">6. Имеются ли разногласия по обстоятельствам ДТП?</string>
     <string name="question_of_the_accident_item_7">7. Превышает ли сумма ущерба 800 евро?</string>
