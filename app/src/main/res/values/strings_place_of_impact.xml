@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
+    <string name="place_of_impact_title_screen">Место повреждения транспортного средства %s</string>
     <string name="place_of_impact_front_bumper">Передний бамбер</string>
     <string name="place_of_impact_back_bumper">Задний бампер</string>
     <string name="place_of_impact_front_left_wing">Переднее левое крыло</string>

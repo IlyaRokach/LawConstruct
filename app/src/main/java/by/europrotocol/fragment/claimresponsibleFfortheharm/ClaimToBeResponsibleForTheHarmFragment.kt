@@ -25,6 +25,7 @@ class ClaimToBeResponsibleForTheHarmFragment: BaseRegistrationFragment<IClaimToB
     protected lateinit var notes: EditText
 
     override fun onCreateViewFragment(view: View): View {
+        titleString = "Экран с примечаниями"
         initPresenter()
         initListener()
         return view

@@ -56,18 +56,37 @@ class RegistrationActivity : AppCompatActivity(), INextCallback {
         val value = getNextStep(currentStep, typeDriver)
 
         val fragment = when (value.first) {
-            RegistrationStep.STEP_PERSONAL_DRIVER_INFO -> PrivateInfoDriverFragment.newInstance()
-            RegistrationStep.STEP_INSURER_INFO -> InsurerInformationFragment.newInstance(value.second!!)
-            RegistrationStep.STEP_DRIVER_INFO -> DriverInfoFragment.newInstance(value.second!!)
-            RegistrationStep.STEP_PLACE_HOLDER_DATA -> PolicyholderInformationFragment.newInstance(value.second!!)
-            RegistrationStep.STEP_AUTO_INFO -> AutoInfoFragment.newInstance(value.second!!)
-            RegistrationStep.STEP_QUESTION_ACCIDENT -> QuestionOfTheAccidentFragment.newInstance()
-            RegistrationStep.STEP_CIRCUMSTANCES_OF_AN_ACCIDENT -> CircumstancesOfTheAccidentFragment.newInstance(value.second!!)
-            RegistrationStep.STEP_PLACE_OF_IMPACT -> PlaceOfImpactFragment.newInstance(value.second!!)
-            RegistrationStep.STEP_PLACE_OF_ACCIDENT -> PlaceOfAccidentFragment.newInstance()
-            RegistrationStep.STEP_MY_NOTES -> ClaimToBeResponsibleForTheHarmFragment.newInstance(value.second!!)
+            RegistrationStep.STEP_PERSONAL_DRIVER_INFO -> {
+                PrivateInfoDriverFragment.newInstance()}
+            RegistrationStep.STEP_INSURER_INFO -> {
+                InsurerInformationFragment.newInstance(value.second!!)
+            }
+            RegistrationStep.STEP_DRIVER_INFO -> {
+                DriverInfoFragment.newInstance(value.second!!)
+            }
+            RegistrationStep.STEP_PLACE_HOLDER_DATA -> {
+                PolicyholderInformationFragment.newInstance(value.second!!)
+            }
+            RegistrationStep.STEP_AUTO_INFO -> {
+                AutoInfoFragment.newInstance(value.second!!)
+            }
+            RegistrationStep.STEP_QUESTION_ACCIDENT -> {
+                QuestionOfTheAccidentFragment.newInstance()
+            }
+            RegistrationStep.STEP_CIRCUMSTANCES_OF_AN_ACCIDENT -> {
+                CircumstancesOfTheAccidentFragment.newInstance(value.second!!)
+            }
+            RegistrationStep.STEP_PLACE_OF_IMPACT -> {
+                PlaceOfImpactFragment.newInstance(value.second!!)
+            }
+            RegistrationStep.STEP_PLACE_OF_ACCIDENT -> {
+                PlaceOfAccidentFragment.newInstance()
+            }
+            RegistrationStep.STEP_MY_NOTES -> {
+                ClaimToBeResponsibleForTheHarmFragment.newInstance(value.second!!)
+            }
             RegistrationStep.STEP_GENERATE_PDF -> {
-                startActivity(Intent(this, ProtocolActivity::class.java))
+                startActivity(ProtocolActivity.newIntent(this, false))
                 null
             }
             else -> null

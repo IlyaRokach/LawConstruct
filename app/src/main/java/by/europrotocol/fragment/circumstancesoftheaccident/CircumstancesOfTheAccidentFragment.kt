@@ -84,6 +84,8 @@ class CircumstancesOfTheAccidentFragment: BaseRegistrationFragment<ICircumstance
     override fun onInflateViewFragment(): Int = R.layout.fragment_circumstances_of_the_accident
 
     override fun onCreateViewFragment(view: View): View {
+        getTitleScreen()
+
         initPresenter()
         initListener()
         return view
@@ -129,4 +131,13 @@ class CircumstancesOfTheAccidentFragment: BaseRegistrationFragment<ICircumstance
     }
 
     override fun getTypeDriver(): TypeDriver = arguments!!.get(TypeDriver.NAME_ARG) as TypeDriver
+
+    private fun getTitleScreen(){
+        titleString = String.format("Обстоятельства ДТП %s", when (getTypeDriver().type){
+            TypeDriver.ONE -> "А"
+            TypeDriver.TWO -> "Б"
+            else -> ""
+        })
+    }
+
 }

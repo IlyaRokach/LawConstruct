@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
+    <string name="auto_info_title_screen">Транспортное средство %s</string>
     <string name="auto_info_hint_car_model">*Марка автомобиля</string>
     <string name="auto_info_hint_registration_number">*Регистрационный знак</string>
     <string name="auto_info_hint_country_registration">*Страна регистрации</string>

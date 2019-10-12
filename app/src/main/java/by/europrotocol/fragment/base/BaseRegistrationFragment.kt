@@ -18,7 +18,7 @@ open abstract class BaseRegistrationFragment<T: IPresenter>: Fragment, IView {
 
     protected lateinit var presenter: T
     protected var nextCallback: INextCallback? = null
-    protected var title = 0
+    protected var title: Int? = null
     protected var titleString: String? = null
 
     abstract fun onInflateViewFragment(): Int
@@ -83,6 +83,9 @@ open abstract class BaseRegistrationFragment<T: IPresenter>: Fragment, IView {
         if (presenter != null) {
             presenter.onResume()
         }
+
+        if (titleString != null)
+            activity!!.title = titleString
     }
 
     override fun onPause() {

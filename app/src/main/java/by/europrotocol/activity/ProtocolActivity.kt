@@ -51,6 +51,11 @@ class ProtocolActivity : AppCompatActivity() {
             Intent(context, ProtocolActivity::class.java).apply {
                 putExtra(ARG, true)
             }
+
+        fun newIntent(context: Context, useStub: Boolean): Intent =
+            Intent(context, ProtocolActivity::class.java).apply {
+                putExtra(ARG, useStub)
+            }
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {

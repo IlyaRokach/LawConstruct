@@ -55,6 +55,8 @@ class InsurerInformationFragment: BaseRegistrationFragment<IInsurerInformationPr
     override fun onInflateViewFragment(): Int = R.layout.fragment_insurance_info_user
 
     override fun onCreateViewFragment(view: View): View {
+
+        getTitleScreen()
         initPresenter()
         initListener()
         return view
@@ -210,5 +212,13 @@ class InsurerInformationFragment: BaseRegistrationFragment<IInsurerInformationPr
         startDate.setText(model.startDate)
         finishDate.setText(model.finishDate)
         isvoluntary.isChecked = model.isvoluntary
+    }
+
+    private fun getTitleScreen(){
+        titleString = String.format("Сведения о страховщике %s", when (getTypeDriver().type){
+            TypeDriver.ONE -> "А"
+            TypeDriver.TWO -> "Б"
+            else -> ""
+        })
     }
 }

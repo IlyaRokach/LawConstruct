@@ -56,6 +56,7 @@ class PlaceOfImpactFragment : BaseRegistrationFragment<IPlaceOfImpactPresenter>(
     override fun onInflateViewFragment(): Int = R.layout.fragment_place_of_impact
 
     override fun onCreateViewFragment(view: View): View {
+        getTitleScreen()
         initPresenter()
         initListener()
         return view
@@ -133,4 +134,12 @@ class PlaceOfImpactFragment : BaseRegistrationFragment<IPlaceOfImpactPresenter>(
     }
 
     override fun getTypeDriver(): TypeDriver = arguments!!.get(TypeDriver.NAME_ARG) as TypeDriver
+
+    private fun getTitleScreen(){
+        titleString = getString(R.string.place_of_impact_title_screen, when (getTypeDriver().type){
+            TypeDriver.ONE -> "А"
+            TypeDriver.TWO -> "Б"
+            else -> ""
+        })
+    }
 }

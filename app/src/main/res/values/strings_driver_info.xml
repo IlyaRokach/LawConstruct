@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <string name="driver_info_title_string">Сведения о водителе %s</string>
     <string name="driver_info_hint_first_name">* Фамилия</string>
     <string name="driver_info_hint_last_name">* Имя</string>
     <string name="driver_info_hint_patronymic_name">* Отчество</string>

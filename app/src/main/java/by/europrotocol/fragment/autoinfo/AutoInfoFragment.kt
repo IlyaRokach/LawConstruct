@@ -54,7 +54,7 @@ class AutoInfoFragment: BaseRegistrationFragment<IAutoInfoPresenter>(),
 
     override fun onCreateViewFragment(view: View): View {
 
-        title
+        getTitleScreen()
         initPresenter()
         initListener()
         return view
@@ -170,5 +170,13 @@ class AutoInfoFragment: BaseRegistrationFragment<IAutoInfoPresenter>(),
         etCountryRegistration.setText(model.countryRegistration)
 
         switchIsAvailableTrailer.isChecked = false
+    }
+
+    private fun getTitleScreen(){
+        titleString = getString(R.string.auto_info_title_screen, when (getTypeDriver().type){
+            TypeDriver.ONE -> "А"
+            TypeDriver.TWO -> "Б"
+            else -> ""
+        })
     }
 }

@@ -51,6 +51,7 @@ class PolicyholderInformationFragment : BaseRegistrationFragment<IPolicyholderIn
     protected lateinit var zipCode: EditText
 
     override fun onCreateViewFragment(view: View): View {
+        getTitleScreen()
         initPresenter()
         initListener()
         return view
@@ -176,4 +177,12 @@ class PolicyholderInformationFragment : BaseRegistrationFragment<IPolicyholderIn
     }
 
     override fun getTypeDriver(): TypeDriver = arguments!!.get(TypeDriver.NAME_ARG) as TypeDriver
+
+    private fun getTitleScreen(){
+        titleString = String.format("Сведения о страхователе %s", when (getTypeDriver().type){
+            TypeDriver.ONE -> "А"
+            TypeDriver.TWO -> "Б"
+            else -> ""
+        })
+    }
 }

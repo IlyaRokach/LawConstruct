@@ -69,6 +69,8 @@ class DriverInfoFragment: BaseRegistrationFragment<IDriverInfoPresenter>(), IDri
     override fun onInflateViewFragment(): Int = R.layout.fragment_driver_info_user
 
     override fun onCreateViewFragment(view: View): View {
+
+        getTitleScreen()
         initPresenter()
         initListener()
         return view
@@ -247,5 +249,13 @@ class DriverInfoFragment: BaseRegistrationFragment<IDriverInfoPresenter>(), IDri
         number.setText(model.driverLicense.number)
         category.setText(model.driverLicense.category.toString())
         validFinishDate.setText(model.driverLicense.validFinishDate)
+    }
+
+    private fun getTitleScreen(){
+        titleString = getString(R.string.driver_info_title_string, when (getTypeDriver().type){
+            TypeDriver.ONE -> "А"
+            TypeDriver.TWO -> "Б"
+            else -> ""
+        })
     }
 }
