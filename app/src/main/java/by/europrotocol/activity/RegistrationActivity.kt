@@ -2,9 +2,14 @@ package by.europrotocol.activity
 
 import android.content.Context
 import android.content.Intent
+import android.os.Build
 import android.os.Bundle
+import android.os.Handler
+import android.widget.Toast
+import androidx.annotation.IdRes
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentTransaction
 import by.europrotocol.R
 import by.europrotocol.activity.registration.INextCallback
 import by.europrotocol.activity.registration.RegistrationStep
@@ -22,6 +27,8 @@ import by.europrotocol.fragment.questionoftheaccident.QuestionOfTheAccidentFragm
 import kotlinx.android.synthetic.main.activity_registration.*
 
 class RegistrationActivity : AppCompatActivity(), INextCallback {
+
+    private var doubleBackToExitPressedOnce = false
 
     val list = listOf(
         Pair(RegistrationStep.STEP_QUESTION_ACCIDENT, null),
@@ -93,10 +100,8 @@ class RegistrationActivity : AppCompatActivity(), INextCallback {
         }
 
         if (fragment != null) {
-            supportFragmentManager.beginTransaction().replace(
-                R.id.container_registration,
-                fragment
-            ).commitAllowingStateLoss()
+
+            addFragment(R.id.container_registration, fragment)
         }
     }
 
@@ -122,10 +127,64 @@ class RegistrationActivity : AppCompatActivity(), INextCallback {
         setContentView(R.layout.activity_registration)
         setSupportActionBar(toolbar)
 
-        supportFragmentManager.beginTransaction().replace(
-            R.id.container_registration,
-            QuestionOfTheAccidentFragment.newInstance()
-        ).commitAllowingStateLoss()
+        addFragment(R.id.container_registration, QuestionOfTheAccidentFragment.newInstance())
+    }
 
+    fun <T : Fragment> addFragment(@IdRes containerId: Int, fragment: T) {
+        val currentFragment = supportFragmentManager.findFragmentById(containerId)
+        val ft = this.supportFragmentManager.beginTransaction()
+        this.addAnimations(ft)
+        ft.add(containerId, fragment).addToBackStack("root_fragment")
+        if (currentFragment != null) {
+            ft.hide(currentFragment)
+        }
+
+        ft.commitAllowingStateLoss()
+    }
+
+    protected fun addAnimations(ft: FragmentTransaction) {
+        ft.setCustomAnimations(
+            R.anim.enter_from_left,
+            R.anim.exit_to_right,
+            R.anim.enter_from_right,
+            R.anim.exit_to_left
+        )
+    }
+
+    override fun onBackPressed() {
+        makeBack()
+    }
+
+    private fun checkDoubleBackToExitPressedOnce() {
+        if (doubleBackToExitPressedOnce) {
+            super.onBackPressed()
+        } else {
+            setDoubleBackToExitPressedOnce(true)
+            Toast.makeText(this, "Нажмите 2 раза для выхода с приложения", Toast.LENGTH_SHORT).show()
+            Handler().postDelayed(
+                { setDoubleBackToExitPressedOnce(false) },
+                1000
+            )
+        }
+    }
+
+    protected fun makeBack() {
+        if (!this.isLastFragmentInStack()) {
+            this.removeFragmentFromBackStack()
+        } else {
+            checkDoubleBackToExitPressedOnce()
+        }
+    }
+
+    private fun removeFragmentFromBackStack() {
+        this.supportFragmentManager.popBackStackImmediate()
+    }
+
+    private fun setDoubleBackToExitPressedOnce(doubleBackToExitPressedOnce: Boolean) {
+        this.doubleBackToExitPressedOnce = doubleBackToExitPressedOnce
+    }
+
+    fun isLastFragmentInStack(): Boolean {
+        return this.supportFragmentManager.backStackEntryCount === 1
     }
 }
