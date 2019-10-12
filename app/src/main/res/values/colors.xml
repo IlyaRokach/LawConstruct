@@ -5,7 +5,9 @@
     <color name="colorAccent">#D81B60</color>
 
     <color name="baseColor">#01579B</color>
+    <color name="whiteColor">#FFFFFF</color>
     <color name="editTextColor">#A7C0CD</color>
     <color name="orange">#FF9800</color>
+    <color name="grey">#78909C</color>
     <color name="headerTextColor">#4B636E</color>
 </resources>

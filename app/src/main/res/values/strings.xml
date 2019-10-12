@@ -8,5 +8,7 @@
     <string name="email_hint">Email или телефон</string>
     <string name="password_hint">Пароль</string>
     <string name="forgot_password">Забыли пароль?</string>
+    <string name="title_activity_registration_user">RegistrationUserActivity</string>
+    <string name="button_next">Далее</string>
 
 </resources>

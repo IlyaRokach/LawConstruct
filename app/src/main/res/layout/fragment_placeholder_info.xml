@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        <EditText
+                android:id="@+id/et_first_name"
+                style="@style/EditTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/default_margin_12"
+                android:layout_marginStart="@dimen/default_margin_48"
+                android:layout_marginEnd="@dimen/default_margin_48"
+
+                android:hint="@string/persona_driver_info_hint_first_name"
+                android:inputType="text"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+        <EditText
+                android:id="@+id/et_last_name"
+                style="@style/EditTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/default_margin_48"
+                android:layout_marginEnd="@dimen/default_margin_48"
+                android:layout_marginTop="@dimen/default_margin_12"
+
+                android:hint="@string/persona_driver_info_hint_last_name"
+                android:inputType="text"
+                app:layout_constraintTop_toBottomOf="@id/et_first_name"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+        <EditText
+                android:id="@+id/et_patronymic_name"
+                style="@style/EditTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/default_margin_48"
+                android:layout_marginEnd="@dimen/default_margin_48"
+                android:layout_marginTop="@dimen/default_margin_12"
+
+                android:hint="@string/persona_driver_info_hint_patronymic_name"
+                android:inputType="text"
+                app:layout_constraintTop_toBottomOf="@id/et_last_name"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+        <EditText
+                android:id="@+id/et_residence_address"
+                style="@style/EditTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/default_margin_48"
+                android:layout_marginEnd="@dimen/default_margin_48"
+                android:layout_marginTop="@dimen/default_margin_12"
+
+                android:hint="@string/driver_info_residence_address"
+                android:inputType="text"
+                app:layout_constraintTop_toBottomOf="@id/et_patronymic_name"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+        <EditText
+                android:id="@+id/et_zip_code"
+                style="@style/EditTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/default_margin_48"
+                android:layout_marginEnd="@dimen/default_margin_48"
+                android:layout_marginTop="@dimen/default_margin_12"
+
+                android:hint="@string/driver_info_zip_code"
+                android:inputType="text"
+                app:layout_constraintTop_toBottomOf="@id/et_residence_address"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+        <EditText
+                android:id="@+id/et_country_registration"
+                style="@style/EditTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/default_margin_48"
+                android:layout_marginEnd="@dimen/default_margin_48"
+                android:layout_marginTop="@dimen/default_margin_12"
+
+                android:hint="@string/driver_info_country"
+                android:inputType="text"
+                app:layout_constraintTop_toBottomOf="@id/et_zip_code"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+        <EditText
+                android:id="@+id/et_phone"
+                style="@style/EditTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/default_margin_48"
+                android:layout_marginEnd="@dimen/default_margin_48"
+                android:layout_marginTop="@dimen/default_margin_12"
+                android:layout_marginBottom="@dimen/default_margin_12"
+
+                android:hint="Телефон или e-mail"
+
+                app:layout_constraintTop_toBottomOf="@id/et_country_registration"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/next_button"
+
+                android:inputType="text"/>
+
+        <Button
+                android:id="@+id/next_button"
+                style="@style/NextButtonStyle"
+
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/button_next"
+
+                android:layout_marginTop="@dimen/default_margin_12"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

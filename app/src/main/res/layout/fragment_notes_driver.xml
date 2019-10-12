@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+    <EditText
+
+            style="@style/EditTextStyle"
+            android:id="@+id/notes"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+
+            android:layout_marginStart="@dimen/default_margin_16"
+            android:layout_marginEnd="@dimen/default_margin_16"
+            android:layout_marginTop="@dimen/default_margin_12"
+
+            android:text="@string/strings_notes_driver_notes"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    <CheckBox
+
+            android:id="@+id/cb_i_claim_to_be_responsible_for_the_harm"
+            style="@style/MyCheckBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+
+            android:layout_marginStart="@dimen/default_margin_16"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="@dimen/default_margin_16"
+
+            android:text="@string/strings_notes_driver_i_claim_to_be_responsible_for_the_harm"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/notes" />
+
+    <Button
+            android:id="@+id/next_button"
+            style="@style/NextButtonStyle"
+
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/button_next"
+
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

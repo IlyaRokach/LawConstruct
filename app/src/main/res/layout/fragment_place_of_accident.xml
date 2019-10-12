@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <LinearLayout
+            style="@style/LinearLayoutStyleRadioButtonGroup"
+            android:orientation="vertical"
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/default_margin_12">
+
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/default_margin_16"
+                android:layout_marginEnd="@dimen/default_margin_16"
+                android:layout_marginTop="@dimen/default_margin_12"
+
+                android:text="@string/place_of_accident_date" />
+
+        <EditText
+                style="@style/EditTextStyle"
+                android:id="@+id/et_date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:layout_marginStart="@dimen/default_margin_16"
+                android:layout_marginEnd="@dimen/default_margin_16"
+                android:layout_marginTop="@dimen/default_margin_12"
+                android:inputType="date" />
+
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/default_margin_16"
+                android:layout_marginEnd="@dimen/default_margin_16"
+                android:layout_marginTop="@dimen/default_margin_12"
+
+                android:text="@string/place_of_accident_time" />
+
+        <EditText
+                android:id="@+id/et_time"
+                style="@style/EditTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:layout_marginStart="@dimen/default_margin_16"
+                android:layout_marginEnd="@dimen/default_margin_16"
+                android:layout_marginTop="@dimen/default_margin_12"
+                android:inputType="time" />
+
+        <EditText
+                android:id="@+id/et_place"
+                style="@style/EditTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:layout_marginStart="@dimen/default_margin_16"
+                android:layout_marginEnd="@dimen/default_margin_16"
+                android:layout_marginTop="@dimen/default_margin_12"
+
+                android:hint="@string/place_of_accident_place_address"
+                android:inputType="text" />
+
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/default_margin_16"
+                android:layout_marginEnd="@dimen/default_margin_16"
+                android:layout_marginTop="@dimen/default_margin_12"
+                android:text="@string/place_of_accident_witnesses" />
+
+        <EditText
+                android:id="@+id/et_fio"
+                style="@style/EditTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/default_margin_12"
+                android:layout_marginStart="@dimen/default_margin_16"
+                android:layout_marginEnd="@dimen/default_margin_16"
+                android:hint="@string/place_of_accident_witnesses_fio"
+                android:inputType="text"/>
+
+
+        <EditText
+                android:id="@+id/et_address"
+                style="@style/EditTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/default_margin_16"
+                android:layout_marginEnd="@dimen/default_margin_16"
+                android:layout_marginTop="@dimen/default_margin_12"
+                android:hint="@string/place_of_accident_witnesses_address"
+                android:inputType="text" />
+
+        <EditText
+                android:id="@+id/et_phone"
+                style="@style/EditTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/default_margin_16"
+                android:layout_marginEnd="@dimen/default_margin_16"
+                android:layout_marginTop="@dimen/default_margin_12"
+                android:hint="@string/place_of_accident_witnesses_phone"
+                android:inputType="text"/>
+        <Button
+                android:id="@+id/next_button"
+                style="@style/NextButtonStyle"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/place_of_accident_next_button"
+
+                android:layout_marginTop="@dimen/default_margin_12" />
+    </LinearLayout>
+</ScrollView>

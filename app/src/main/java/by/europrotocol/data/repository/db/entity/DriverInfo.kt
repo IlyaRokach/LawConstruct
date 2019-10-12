@@ -1,0 +1,17 @@
+package by.europrotocol.data.repository.db.entity
+
+import androidx.room.ColumnInfo
+import androidx.room.Entity
+import androidx.room.PrimaryKey
+
+@Entity
+open class DriverInfo {
+    @PrimaryKey(autoGenerate = true)
+    var id: Long = 0
+
+    @ColumnInfo(name = "json")
+    var json: String = "{}"
+
+    @ColumnInfo(name = "user")
+    var isUser: Boolean = false
+}

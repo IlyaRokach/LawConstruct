@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="auto_info_title_screen">Транспортное средство %s</string>
+    <string name="auto_info_hint_car_model">*Марка автомобиля</string>
+    <string name="auto_info_hint_registration_number">*Регистрационный знак</string>
+    <string name="auto_info_hint_country_registration">*Страна регистрации</string>
+    <string name="auto_info_title_is_use_available">У вас есть прицеп?</string>
+    <string name="auto_info_hint_info_text">Или загрузите скан технического паспорта на транспортное средство</string>
+    <string name="auto_info_download_scan">Загрузить скан</string>
+
+    <string name="auto_info_title_not_required_write">Данные не обязательны для заполнения</string>
+    <string name="auto_info_hint_registration_number_trailer">Регистрационный знак прицепа</string>
+    <string name="auto_info_hint_country_registration_trailer">Страна регистрации прицепа</string>
+</resources>

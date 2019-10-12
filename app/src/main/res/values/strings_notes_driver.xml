@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="strings_notes_driver_notes">ответственность за причинение вреда</string>
+    <string name="strings_notes_driver_i_claim_to_be_responsible_for_the_harm">Утверждаю, что являюсь ответственным за причинение вреда</string>
+</resources>

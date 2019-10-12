@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="string_main_area_item_new_icident">Попал в дтп?</string>
+    <string name="string_main_area_item_add_info_qr">История заполненных европротоколов</string>
+    <string name="string_main_area_item_help_info">Правовое просвещение</string>
+</resources>

@@ -84,7 +84,9 @@ class StubRepository: RepositoryEuroProtocolConvertPdf {
             ),
             AccidentCircumstances(didNotComplyWithRequiredLateralInterval = true),
             myNotes = "Не рассчитал габаритные размеры трансп. средства",
-            placeOfInitialStrike = setOf(PlaceOfImpact.FRONT_BUMPER, PlaceOfImpact.FRONT_LEFT_WING)
-        )
+            placeOfInitialStrike = setOf(PlaceOfImpact.FRONT_BUMPER, PlaceOfImpact.FRONT_LEFT_WING),
+            iClaimToBeResponsibleForTheHarm = true
+        ),
+        witnesses = "Сидоров Иван Семенович, +37529569xxxx"
     )
 }
